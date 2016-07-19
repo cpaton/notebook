@@ -1,0 +1,17 @@
+# Site settings
+title: Notebook
+email: a@b.com
+description: > # this means to ignore newlines until "baseurl:"
+  Programmers notebook
+baseurl: "" # the subpath of your site, e.g. /blog/
+#twitter_username: jekyllrb
+#github_username:  jekyll
+
+# Google Analytics
+# google_analytics_tracking_id: XX-XXXXXXXX-X
+
+# Build settings
+# markdown: rdiscount
+
+collections: 
+- testing
