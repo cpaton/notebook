@@ -15,6 +15,7 @@ url: "http://notebook.craigpaton.uk"
 # markdown: rdiscount
 
 highlighter: pygments
+timezone: Europe/London
 
 collections: 
 - testing

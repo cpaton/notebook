@@ -6,6 +6,7 @@
     {{ content }}
     {% include footer.html %}
   </body>
+    {% include scripts.html %}
   	{% if page.script != null %}
   		{% include {{ page.script }} %}
 	{% endif %}
