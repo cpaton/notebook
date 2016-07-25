@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Testing
 sub-title: Testing Sub Title
 permalink: /testing2/

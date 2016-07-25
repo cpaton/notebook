@@ -14,7 +14,10 @@ url: "http://notebook.craigpaton.uk"
 # Build settings
 # markdown: rdiscount
 
-#highlighter: pygments
+highlighter: pygments
 
 collections: 
 - testing
+
+exclude: 
+- readme.txt
