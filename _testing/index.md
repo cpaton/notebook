@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: page
 title: Testing
 sub-title: Testing Sub Title
-permalink: /testing/
+categories: unittesting
+# permalink: /testing/
 ---
 
 some text

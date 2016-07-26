@@ -14,11 +14,14 @@ url: "http://notebook.craigpaton.uk"
 # Build settings
 # markdown: rdiscount
 
-highlighter: pygments
+highlighter: Rouge
 timezone: Europe/London
 
 collections: 
-- testing
+  test_collection:
+    output: true
+  testing:
+    output: true
 
 exclude: 
 - readme.txt
