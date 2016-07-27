@@ -13,11 +13,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
                             
-              {% assign current_collection = site.collections.testing %}
-              {% include navbar_menu.html %}
-
-              {% assign current_collection = site.collections.test_collection %}
-              {% include navbar_menu.html %}
+              {% include navbar_menu.html collection=site.collections.testing %}
+              {% include navbar_menu.html collection=site.collections.test_collection %}
               
           </ul>          
         </div><!--/.nav-collapse -->
