@@ -20,8 +20,10 @@ timezone: Europe/London
 collections: 
   test_collection:
     output: true
+    nav_title: Test Collection
   testing:
     output: true
+    nav_title: Testing
 
 exclude: 
 - readme.txt
