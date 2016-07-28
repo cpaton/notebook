@@ -27,3 +27,17 @@ collections:
 
 exclude: 
 - readme.txt
+
+defaults:
+-
+  scope:
+    path: ""
+    type: "testing"
+  values:
+    page_display_sort_order: 100
+-
+  scope:
+    path: ""
+    type: "test_collection"
+  values:
+    page_display_sort_order: 100    
