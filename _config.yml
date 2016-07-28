@@ -24,6 +24,9 @@ collections:
   testing:
     output: true
     nav_title: Testing
+  synology:
+    output: true
+    nav_title: Synology
 
 exclude: 
 - readme.txt
@@ -34,6 +37,7 @@ defaults:
     path: ""
     type: "testing"
   values:
+    layout: page
     page_display_sort_order: 100
 -
   scope:
@@ -41,3 +45,10 @@ defaults:
     type: "test_collection"
   values:
     page_display_sort_order: 100    
+-
+  scope:
+    path: ""
+    type: "synology"
+  values:
+    layout: page
+    page_display_sort_order: 100
