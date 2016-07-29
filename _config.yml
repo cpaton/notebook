@@ -27,6 +27,9 @@ collections:
   synology:
     output: true
     nav_title: Synology
+  meta:
+    output: true
+    nav_title: Meta
 
 exclude: 
 - readme.txt
@@ -49,6 +52,13 @@ defaults:
   scope:
     path: ""
     type: "synology"
+  values:
+    layout: page
+    page_display_sort_order: 100
+-
+  scope:
+    path: ""
+    type: "meta"
   values:
     layout: page
     page_display_sort_order: 100

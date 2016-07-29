@@ -2,4 +2,5 @@ collections:
   - name: synology
   - name: testing
   - name: test_collection
+  - name: meta
     
