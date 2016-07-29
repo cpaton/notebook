@@ -18,9 +18,6 @@ highlighter: Rouge
 timezone: Europe/London
 
 collections: 
-  test_collection:
-    output: true
-    nav_title: Test Collection
   testing:
     output: true
     nav_title: Testing
@@ -42,12 +39,6 @@ defaults:
   values:
     layout: page
     page_display_sort_order: 100
--
-  scope:
-    path: ""
-    type: "test_collection"
-  values:
-    page_display_sort_order: 100    
 -
   scope:
     path: ""
