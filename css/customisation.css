@@ -7,6 +7,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font: 16px;
+  line-height: 1.5;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 .footer {
   position: absolute;
