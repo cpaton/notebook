@@ -10,7 +10,7 @@ url: "http://notebook.craigpaton.uk"
 # google_analytics_tracking_id: XX-XXXXXXXX-X
 
 # Build settings
-markdown: rdiscount
+markdown: kramdown
 highlighter: Rouge
 timezone: Europe/London
 
