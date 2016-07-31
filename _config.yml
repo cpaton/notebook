@@ -5,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Programmers notebook
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://notebook.craigpaton.uk"
+asset_base_url: "http://notebook-assets.craigpaton.uk/notebook/"
 
 # Google Analytics
 # google_analytics_tracking_id: XX-XXXXXXXX-X
