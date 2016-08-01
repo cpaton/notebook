@@ -4,9 +4,11 @@ layout: default
 
 <article class="post">
     
+    {% if page.title %}
     <div class="page-header">
         <h2>{{ page.title}} </h2>
     </div>
+    {% endif %}
 
     <div class="container">
     {{ content }}
