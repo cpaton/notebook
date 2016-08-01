@@ -16,12 +16,12 @@ highlighter: Rouge
 timezone: Europe/London
 
 collections: 
-  testing:
-    output: true
-    nav_title: Testing
   synology:
     output: true
     nav_title: Synology
+  testing:
+    output: true
+    nav_title: Testing
   meta:
     output: true
     nav_title: Meta

@@ -5,12 +5,11 @@ layout: page
 C# enterprise programmers notebook
 
 <p />
+
+<!-- loop through all collections in a site -->
 <ul>
-    
-{% for col in site.data.meta.collections %}
-{% assign collection = site.collections[col.name] %}
-{% include collection_page_list.html collection=collection %}
+{% for c in site.collections %}
+   {% assign collection=c[1] %}
+   {% include collection_page_list.html collection=collection %}
 {% endfor %}
-
 </ul>
-
