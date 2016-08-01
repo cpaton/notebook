@@ -14,9 +14,11 @@
             <ul class="nav navbar-nav">
 
 {% for c in site.collections %}
-   {% assign collection=c[1] %}
-   {% include navbar_menu.html collection=collection %}
-{% endfor %}
+   {% assign collection_name=c.label %}
+   {% unless collection_name == 'posts' %}
+   {% include navbar_menu.html collection=c %}
+   {% endunless %}
+{% endfor %}                
             
             </ul>          
         </div><!--/.nav-collapse -->

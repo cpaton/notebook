@@ -6,9 +6,9 @@ title: Jekyll Examples
 
 You can access a collection by its name via array access from site.  For example given a collection call Synology it can be accessed via
 
-~~~
+{% highlight ruby %}
 site['synology']
-~~~
+{% endhighlight %}
 
 Note the collection name is case sensitive.
 

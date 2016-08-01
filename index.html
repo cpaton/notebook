@@ -9,7 +9,10 @@ C# enterprise programmers notebook
 <!-- loop through all collections in a site -->
 <ul>
 {% for c in site.collections %}
-   {% assign collection=c[1] %}
-   {% include collection_page_list.html collection=collection %}
+   {% assign collection_name=c.label %}
+   {% unless collection_name == 'posts' %}
+   {% include collection_page_list.html collection=c %}
+   {% endunless %}
 {% endfor %}
 </ul>
+
