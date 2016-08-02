@@ -37,6 +37,9 @@ collections:
   ops:
     output: true
     nav_title: Ops
+  docker:
+    output: true
+    nav_title: Docker
 
 exclude: 
 - readme.txt
@@ -91,3 +94,10 @@ defaults:
   values:
     layout: page
     page_display_sort_order: 100                       
+-
+  scope:
+    path: ""
+    type: "docker"
+  values:
+    layout: page
+    page_display_sort_order: 100                           
