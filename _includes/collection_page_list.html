@@ -1,7 +1,7 @@
-{% assign current_collection = include.collection %}
-<li>{{ current_collection.nav_title }}</li>
+{% assign collection_pages = site.[include.collection.label] %}
+<li>{{ include.collection.nav_title }}</li>
 <ul>
-{% for collection_page in current_collection.docs %}
+{% for collection_page in collection_pages %}
     <li><a href="{{ site.baseurl }}{{ collection_page.url }}">{{ collection_page.title}}</a></li>
 {% endfor %}
 </ul>
