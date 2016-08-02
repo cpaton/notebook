@@ -25,6 +25,18 @@ collections:
   meta:
     output: true
     nav_title: Meta
+  git:
+    output: true
+    nav_title: Git
+  raspberry-pi:
+    output: true
+    nav_title: Raspberry Pi
+  web-development:
+    output: true
+    nav_title: Web Dev
+  ops:
+    output: true
+    nav_title: Ops
 
 exclude: 
 - readme.txt
@@ -51,3 +63,31 @@ defaults:
   values:
     layout: page
     page_display_sort_order: 100
+-
+  scope:
+    path: ""
+    type: "git"
+  values:
+    layout: page
+    page_display_sort_order: 100
+-
+  scope:
+    path: ""
+    type: "raspberry-pi"
+  values:
+    layout: page
+    page_display_sort_order: 100            
+-
+  scope:
+    path: ""
+    type: "web-development"
+  values:
+    layout: page
+    page_display_sort_order: 100
+-
+  scope:
+    path: ""
+    type: "ops"
+  values:
+    layout: page
+    page_display_sort_order: 100                       
