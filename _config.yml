@@ -40,6 +40,10 @@ collections:
   docker:
     output: true
     nav_title: Docker
+  architecture:
+    output: true
+    nav_title: Architecture
+
 
 exclude: 
 - readme.txt
@@ -101,3 +105,10 @@ defaults:
   values:
     layout: page
     page_display_sort_order: 100                           
+-
+  scope:
+    path: ""
+    type: "architecture"
+  values:
+    layout: page
+    page_display_sort_order: 100    
