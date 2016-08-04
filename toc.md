@@ -16,13 +16,6 @@ layout: null
 {% assign the_page = (site.testing | where:"url","/testing/index.html") | first ) %}
 {{ the_page.url }}
 
-{{ site.collections }}
 
-{% assign the_collection = site.collections.testing %}
-{{ site.collections[the_collection.label] }}
-
-{% for a_collection in site.collections %}
-{{ a_collection.left(8) }}
-{% endfor %}
            
            
