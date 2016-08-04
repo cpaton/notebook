@@ -8,7 +8,8 @@ Programmers notebook
 
 <!-- loop through all collections in a site -->
 <ul>
-{% for c in site.collections %}
+{% assign sorted_collections = site.collections | sort: 'display_order' %}
+{% for c in sorted_collections %}
    {% assign collection_name=c.label %}
    {% unless collection_name == 'posts' %}
    {% include collection_page_list.html collection=c %}

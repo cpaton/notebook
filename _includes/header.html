@@ -13,7 +13,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
 
-{% for c in site.collections %}
+{% assign sorted_collections = site.collections | sort: 'display_order' %}
+{% for c in sorted_collections %}
    {% assign collection_name=c.label %}
    {% unless collection_name == 'posts' %}
    {% include navbar_menu.html collection=c %}

@@ -6,7 +6,6 @@ title : Todo
 * ReStructured text?
 * Local docker file taken from Jekyll
 * Generate site on local machine to _site directory and turn Git into .nojekyll
-* Where to store images - Azure blob storage?
 * Is it possible to loop through the collections defined and possibly within a custom sort order
 * Is it possible to read the sort order from the page and output the links in a custom order
 * Vimeo liquid tag how to pass multiple arguments

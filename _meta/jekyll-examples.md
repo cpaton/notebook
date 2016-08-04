@@ -21,3 +21,23 @@ For example the below is a list of pages in that collection
 {% endunless %}
 {% endfor %}
 </ul>
+
+### Display collections in sorted order
+
+Use Liquid function to sort the collection array by a custom property defined in the ``_config.yml``
+
+{% highlight ruby %}
+assign sorted_collections = site.collections | sort: 'display_order'
+{% endhighlight %}
+
+For example below is a list of collcetions labels in display order
+
+<ul>
+{% assign sorted_collections = site.collections | sort: 'display_order' %}
+{% for c in sorted_collections %}
+   {% assign collection_name=c.label %}
+   {% unless collection_name == 'posts' %}
+   <li>{{ c.label }}</li>
+   {% endunless %}
+{% endfor %}
+</ul>

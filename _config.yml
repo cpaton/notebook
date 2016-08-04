@@ -19,30 +19,39 @@ collections:
   synology:
     output: true
     nav_title: Synology
+    display_order: 10
   testing:
     output: true
     nav_title: Testing
+    display_order: 1
   meta:
     output: true
     nav_title: Meta
+    display_order: 100
   git:
     output: true
     nav_title: Git
+    display_order: 5
   raspberry-pi:
     output: true
     nav_title: Raspberry Pi
+    display_order: 11
   web-development:
     output: true
     nav_title: Web Dev
+    display_order: 3
   ops:
     output: true
     nav_title: Ops
+    display_order: 12
   docker:
     output: true
     nav_title: Docker
+    display_order: 6
   architecture:
     output: true
     nav_title: Architecture
+    display_order: 2
 
 
 exclude: 
