@@ -52,7 +52,10 @@ collections:
     output: true
     nav_title: Architecture
     display_order: 2
-
+  learning:
+    output: true
+    nav_title: Learning
+    display_order: 8
 
 exclude: 
 - readme.txt
@@ -121,3 +124,10 @@ defaults:
   values:
     layout: page
     page_display_sort_order: 100    
+-
+  scope:
+    path: ""
+    type: "learning"
+  values:
+    layout: page
+    page_display_sort_order: 100        
