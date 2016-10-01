@@ -19,11 +19,34 @@ Essentially
 Two items need to be configured to use the windows client to connect to the Synology daemon
 
 * **C:\Program Files\CrashPlan\conf\ui.properties** need to update serviceHost to the IP address of the Synology
-* Copy the file **/var/lib/crashplan/.ui_info** from the Synology to **C:\ProgramData\CrashPlan\.ui_info** (this file includes a port number and a GUID). The last part is the IP address of the Synology device this should be updated
+* Copy the file **/var/lib/crashplan/.ui_info** from the Synology to **C:\ProgramData\CrashPlan\\.ui_info** (this file includes a port number and a GUID). The last part is the IP address of the Synology device this should be updated
 
 ### Fails to start
 
-#### Repairing upgrade
+#### Installing upgrade then stops >= 4.7.0
+
+<pre>
+I 10/01/16 11:05AM CrashPlan started, version 4.7.0, GUID 674279968953860117
+I 10/01/16 11:05AM Downloading a new version of CrashPlan.
+I 10/01/16 11:05AM Download of upgrade complete - version 1435813200480.
+I 10/01/16 11:05AM Installing upgrade - version 1435813200480
+I 10/01/16 11:05AM Upgrade installed - version 1435813200480
+I 10/01/16 11:06AM CrashPlan stopped, version 4.7.0, GUID 674279968953860117
+</pre>
+
+Since around v4.7.0 CrashPlan switch to delivering the upgrades archive packages that can be extracted via the cpio utility.  The upgrade comes as an upgrade.cpi file.  First this needs to be unzipped, then the cpio utility can extract the contents.  Once compete the upgrade file should be removed so that it doesn't attempt to apply the upgrade when the service next starts
+
+{% highlight shell %}
+cd /var/packages/CrashPlan/target
+mv ./upgrade.cpi upgrade.cpi.gz
+gunzip upgrade.cpi.gz
+bin/cpio -i < upgrade.cpi
+rm upgrade.cpi
+{% endhighlight %}
+
+Should be able to start the service now
+
+#### Repairing upgrade <4.7.0
 
 CrashPlan package fails to start on the synology. Viewing the log file from within the package manager shows something like
 
