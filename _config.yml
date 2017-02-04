@@ -56,6 +56,10 @@ collections:
     output: true
     nav_title: Learning
     display_order: 8
+  tooling:
+    output: true
+    nav_title: Tooling
+    display_order: 8    
 
 exclude: 
 - readme.txt
@@ -128,6 +132,13 @@ defaults:
   scope:
     path: ""
     type: "learning"
+  values:
+    layout: page
+    page_display_sort_order: 100        
+-
+  scope:
+    path: ""
+    type: "tooling"
   values:
     layout: page
     page_display_sort_order: 100        

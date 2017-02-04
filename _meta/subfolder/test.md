@@ -8,4 +8,5 @@ Sample file in subfolder
 {% assign pages = site.['meta'] %}
 {% for page in pages %}
 {{ page.url }}
+{{ page.path }}
 {% endfor %}

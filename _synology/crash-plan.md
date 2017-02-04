@@ -6,6 +6,7 @@ CrashPlan consists of two parts, a server and a client that connects to the serv
 
 * [http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx](http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx)
 * [http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/](http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/)
+* [https://miketabor.com/install-crashplan-synology/](https://miketabor.com/install-crashplan-synology/) - slighty more up to date than PC load letter
 
 Essentially
 
@@ -13,6 +14,13 @@ Essentially
 * Enable home service on the NAS
 * Install the CrashPlan package from PCLoadLetter
 * Setup client on a PC to connect to the server running on the NAS and configure it
+
+Crashplan via docker
+
+* [https://miketabor.com/run-crashplan-docker-synology-nas/](https://miketabor.com/run-crashplan-docker-synology-nas/)
+* [https://github.com/JrCs/docker-crashplan](https://github.com/JrCs/docker-crashplan)
+
+Not been able to get it working yet.  Container starts and able to connect from windows client but not able to successfully enter the credentials.  Client is reporting the error CPC_UNAVILABLE
 
 ### Windows Client
 
@@ -45,6 +53,10 @@ rm upgrade.cpi
 {% endhighlight %}
 
 Should be able to start the service now
+
+The comments of this (blog post)[https://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/comment-page-42/#comments] seem to get updated as new problems are hit with versions
+
+This (post)[https://crashplan.setepontos.com/crashplan-4-7-0-installation/] specifically talks about v4.7.0
 
 #### Repairing upgrade <4.7.0
 
