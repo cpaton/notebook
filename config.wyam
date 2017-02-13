@@ -1,0 +1,8 @@
+#n -p Wyam.All
+
+Pipelines.Add("Markdown",
+    ReadFiles(@"**\*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(".html")
+);
