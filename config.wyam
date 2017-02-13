@@ -1,8 +1,17 @@
 #n -p Wyam.All
 
+Settings["site.title"] = "Notebook";
+
 Pipelines.Add("Markdown",
     ReadFiles(@"**\*.md"),
     FrontMatter(Yaml()),
     Markdown(),
     WriteFiles(".html")
 );
+
+Pipelines.Add("Test",
+    ReadFiles("**/{!_,}*.cshtml"),
+    Razor(),
+    WriteFiles(".html")
+);    
+    

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  @Html.Partial("partials/_head")
+  <body>
+    {% include header.html %}
+    @RenderBody()
+    {% include footer.html %}
+  </body>
+    {% include scripts.html %}
+  	{% if page.script != null %}
+  		{% include {{ page.script }} %}
+	{% endif %}
+</html>
