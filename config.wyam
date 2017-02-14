@@ -1,6 +1,9 @@
 #n -p Wyam.All
 
+Settings["site.url"] = "http://notebook.craigpaton.uk";
+Settings["site.asset-base-url"] = "http://notebook-assets.craigpaton.uk/notebook/";
 Settings["site.title"] = "Notebook";
+Settings["site.description"] = "Programmers notebook";
 
 Pipelines.Add("Markdown",
     ReadFiles(@"**\*.md"),
@@ -11,6 +14,7 @@ Pipelines.Add("Markdown",
 
 Pipelines.Add("Test",
     ReadFiles("**/{!_,}*.cshtml"),
+    Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".cshtml", ".html")).AbsoluteUri),
     Razor(),
     WriteFiles(".html")
 );    

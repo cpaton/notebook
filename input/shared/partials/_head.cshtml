@@ -13,8 +13,16 @@
     <title>@Model["site.title"]</title>
     }
 
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    @if (!string.IsNullOrEmpty(Model.Get("description", string.Empty).ToString()))
+    {
+    <meta name="description" content="@Model["description"]" />
+    }
+    else
+    {
+    <meta name="description" content="@Model["site.description"]" />
+    }
+
+    <link rel="canonical" href="@Model.String("CanonicalUrl").Replace("index.html", "")" />
 
     <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/stylesheet.css" media="screen">-->
     <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/github-dark.css" media="screen">-->
