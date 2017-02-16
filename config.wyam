@@ -6,18 +6,20 @@ Settings["site.asset-base-url"] = "http://notebook-assets.craigpaton.uk/notebook
 Settings["site.title"] = "Notebook";
 Settings["site.description"] = "Programmers notebook";
 
-Pipelines.Add("Markdown",
+Pipelines.Add("Pages",
     ReadFiles(@"**\*.md"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".md", ".html")).AbsoluteUri),
     FrontMatter(Yaml()),
     Markdown(),
-    Razor(),
+    //Tree(),
+    Razor().WithLayout("_page"),
     WriteFiles(".html")
 );
 
 Pipelines.Add("Test",
     ReadFiles("**/{!_,}*.cshtml"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".cshtml", ".html")).AbsoluteUri),
+    //Meta("AllDocs", @ctx2.Documents["Pages"]),
     Razor(),
     WriteFiles(".html")
 );    

@@ -25,3 +25,9 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+
+@foreach(var doc in Documents["Pages"])
+{
+        string link = doc.String(Keys.RelativeFilePath);
+        @link
+}
