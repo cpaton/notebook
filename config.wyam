@@ -10,10 +10,19 @@ Pipelines.Add("Pages",
     ReadFiles(@"**\*.md"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".md", ".html")).AbsoluteUri),
     FrontMatter(Yaml()),
+    WriteFiles(".html").OnlyMetadata()
+);
+
+Pipelines.Add("PageTree",
+    Documents("Pages"),
+    Tree()
+);
+
+Pipelines.Add("RenderPages",
+    Documents("Pages"),
     Markdown(),
-    //Tree(),
     Razor().WithLayout("_page"),
-    WriteFiles(".html")
+    WriteFiles()
 );
 
 Pipelines.Add("Test",
