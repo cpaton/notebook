@@ -1,48 +1,24 @@
-<!-- Bootstrap nabar goes here -->
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/{{ site.baseurl }}">{{ site.title }}</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+    <!-- Bootstrap nabar goes here -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/@Model["site.base-url"]">@Model["site.title"]</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+@{
+    var docs = Documents["PageTree"];
+    var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null);
 
-{% assign sorted_collections = site.collections | sort: 'display_order' %}
-{% for c in sorted_collections %}
-   {% assign collection_name=c.label %}
-   {% unless collection_name == 'posts' %}
-   {% include navbar_menu.html collection=c %}
-   {% endunless %}
-{% endfor %}                
-            
-            </ul>          
+    foreach (var rootDoc in rootDocs) {
+        @Html.Partial("partials/_menuSection", rootDoc)    
+    }    
+}
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-
-@foreach(var doc in Documents["Pages"])
-{
-        string link = doc.String(Keys.RelativeFilePath);
-        <p />@link
-}
-
-<!-- Page Tree -->
-@{
-    var docs = Documents["PageTree"];
-    var count = docs.Count();
-    <p/>@count
-    var current = docs.Where(x => x.Get<IDocument>("Parent") == null).First();
-    while (current != null)
-    {
-        var documentPath = current.Get<object[]>("TreePath", new object[] {});
-        var value = string.Join(";", documentPath.Cast<string>());
-        <p />@value
-        current = current.Get<IDocument>("Next", null);
-    }
-}

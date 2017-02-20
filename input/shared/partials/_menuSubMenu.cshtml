@@ -1,0 +1,10 @@
+@{
+    var current = Model;
+}
+        <ul class="dropdown-menu">
+            @while (current != null) {
+                var documentPath = current.Get<object[]>("TreePath", new object[] {});
+                <li><a href="#">@documentPath.Last()</a></li>
+                current = current.Get<IDocument>("NextSibling");
+            }
+        </ul>

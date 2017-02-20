@@ -6,7 +6,7 @@
     @RenderBody()
     {% include footer.html %}
   </body>
-    {% include scripts.html %}
+    @Html.Partial("partials/_scripts")
   	{% if page.script != null %}
   		{% include {{ page.script }} %}
 	{% endif %}

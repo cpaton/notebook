@@ -15,7 +15,7 @@ Pipelines.Add("Pages",
 
 Pipelines.Add("PageTree",
     Documents("Pages"),
-    Tree()
+    Tree().WithNesting(true, true)
 );
 
 Pipelines.Add("RenderPages",
@@ -34,5 +34,6 @@ Pipelines.Add("Test",
 );    
 
 Pipelines.Add("Resources",
-	CopyFiles("**/*.css")
+	CopyFiles("**/*.css"),
+	CopyFiles("js/*.js")
 );    

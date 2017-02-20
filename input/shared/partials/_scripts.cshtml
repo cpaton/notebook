@@ -1,0 +1,17 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="@Model["site.base-url"]/js/jquery-3.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="@Model["site.base-url"]/js/bootstrap.min.js"></script>
+
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+            $(this).parent().siblings().removeClass('open');
+            $(this).parent().toggleClass('open');
+        });
+    });
+})(jQuery);
+</script>
