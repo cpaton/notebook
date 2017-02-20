@@ -29,5 +29,20 @@
 @foreach(var doc in Documents["Pages"])
 {
         string link = doc.String(Keys.RelativeFilePath);
-        @link
+        <p />@link
+}
+
+<!-- Page Tree -->
+@{
+    var docs = Documents["PageTree"];
+    var count = docs.Count();
+    <p/>@count
+    var current = docs.Where(x => x.Get<IDocument>("Parent") == null).First();
+    while (current != null)
+    {
+        var documentPath = current.Get<object[]>("TreePath", new object[] {});
+        var value = string.Join(";", documentPath.Cast<string>());
+        <p />@value
+        current = current.Get<IDocument>("Next", null);
+    }
 }
