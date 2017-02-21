@@ -4,10 +4,7 @@
 <body>
 @Html.Partial("partials/_navBar")
 @RenderBody()
-{% include footer.html %}
+@Html.Partial("partials/_footer")
 </body>
 @Html.Partial("partials/_scripts")
-{% if page.script != null %}
-  {% include {{ page.script }} %}
-{% endif %}
 </html>
