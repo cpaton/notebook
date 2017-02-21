@@ -1,2 +1,17 @@
-<!-- 3 - Menu -->
-<!-- 3 - Menu -->
+@{
+    @*
+    Given the first item to display within the dropdown sub menu shown in turn off the main nav bar.  
+    Responsible for displaying all items at this level i.e. it needs to loop no need to check for children 
+    *@
+    var current = Model;
+}
+                                <!-- 3 - Menu -->
+                                <ul class="dropdown-menu">
+@while (current != null) {
+                                    <li class=""><a href="@current.String("site.base-url")/@current.String(Keys.RelativeFilePath)">@current.String("Title")</a></li>
+    current = current.Get<IDocument>("NextSibling");
+}
+                                </ul>
+                                <!-- 3 - Menu -->
+
+        
