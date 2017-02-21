@@ -1,7 +1,18 @@
-<ul>
-@foreach(var doc in Documents["Pages"])
-{
-    string link = doc.String(Keys.RelativeFilePath);
-    <li><a href="@link">@link</a></li>
+    <div class="container">
+        <ul>
+@{
+    var docs = Documents["PageTree"];
+    var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null);
+
+    foreach (var rootDoc in rootDocs) {
+        var documentPath = rootDoc.Get<object[]>("TreePath", new object[] {});
+        var value = string.Join(";", documentPath.Cast<string>());
+        var children = rootDoc.Get<IEnumerable<IDocument>>("Children");
+        var hasChildren = children.Count() > 0;
+        @if (hasChildren) {
+                @Html.Partial("partials/_tableOfContents", rootDoc) 
+        }
+    }    
 }
-</ul>
+        </ul>
+    </div>
