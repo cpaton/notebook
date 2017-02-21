@@ -15,7 +15,18 @@
     var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null);
 
     foreach (var rootDoc in rootDocs) {
-        @Html.Partial("partials/_menuLevel1", rootDoc)    
+        var documentPath = rootDoc.Get<object[]>("TreePath", new object[] {});
+        var value = string.Join(";", documentPath.Cast<string>());
+        var children = rootDoc.Get<IEnumerable<IDocument>>("Children");
+        var hasChildren = children.Count() > 0;
+        @if (hasChildren) {
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@value <span class="caret"></span></a>
+                            @Html.Partial("partials/_navBarMenu", children.First()) 
+                    </li>
+                </ul>
+        }
     }    
 }
             </div>
