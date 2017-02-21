@@ -21,7 +21,7 @@ Pipelines.Add("PageTree",
 Pipelines.Add("RenderPages",
     Documents("Pages"),
     Markdown(),
-    Razor().WithLayout("_page"),
+    Razor().WithLayout("/shared/_page.cshtml"),
     WriteFiles()
 );
 
@@ -29,7 +29,7 @@ Pipelines.Add("Test",
     ReadFiles("**/{!_,}*.cshtml"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".cshtml", ".html")).AbsoluteUri),
     //Meta("AllDocs", @ctx2.Documents["Pages"]),
-    Razor(),
+    Razor().WithLayout("/shared/_default.cshtml"),
     WriteFiles(".html")
 );    
 

@@ -3,20 +3,16 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @if (!string.IsNullOrEmpty(Model.Get("title", string.Empty).ToString()))
-    {
+    @if (!string.IsNullOrEmpty(Model.Get("title", string.Empty).ToString())) {
     <title>@Model["title"]</title>
     }
-    else
-    {
+    else {
     <title>@Model["site.title"]</title>
     }
-    @if (!string.IsNullOrEmpty(Model.Get("description", string.Empty).ToString()))
-    {
+    @if (!string.IsNullOrEmpty(Model.Get("description", string.Empty).ToString())) {
     <meta name="description" content="@Model["description"]" />
     }
-    else
-    {
+    else {
     <meta name="description" content="@Model["site.description"]" />
     }
     <link rel="canonical" href="@Model.String("CanonicalUrl").Replace("index.html", "")" />
