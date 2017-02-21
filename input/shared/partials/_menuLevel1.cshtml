@@ -5,22 +5,17 @@
     var children = current.Get<IEnumerable<IDocument>>("Children");
     var hasChildren = children.Count() > 0;
 }
+                <!-- 1 - Menu -->
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@value <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                         @if (hasChildren) {
-                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">@documentPath.Last()</a>
-                            @Html.Partial("partials/_menuSubMenu", children.First()) 
-                            </li>   
-                        }
-                        else {
-                            @while (current != null) {
-                                documentPath = current.Get<object[]>("TreePath", new object[] {});
-                            <li><a href="#">@documentPath.Last()</a></li>
-                            current = current.Get<IDocument>("NextSibling");
-                            }
+                            <!-- 1 - Has Children -->
+                            @Html.Partial("partials/_menuLevel2", children.First()) 
+                            <!-- 1 - Has Children -->
                         }
                         </ul>
                     </li>
                 </ul>
+                <!-- 1 - Menu -->

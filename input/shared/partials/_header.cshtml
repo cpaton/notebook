@@ -1,12 +1,11 @@
-    <!-- Bootstrap nabar goes here -->
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/@Model["site.base-url"]">@Model["site.title"]</a>
             </div>
@@ -16,9 +15,9 @@
     var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null);
 
     foreach (var rootDoc in rootDocs) {
-        @Html.Partial("partials/_menuSection", rootDoc)    
+        @Html.Partial("partials/_menuLevel1", rootDoc)    
     }    
 }
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+            </div>
+        </div>
+    </nav>
