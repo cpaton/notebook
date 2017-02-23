@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notebook</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/" />
+    <title>SSH</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/synology/ssh.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,174 +155,38 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <ul>
+
+<article class="post">
     
-        <li>architecture
-        <ul>
-            
-        <li>
-            <a href="/architecture/CQRS.html">CQRS</a>
-        </li>
-        <li>
-            <a href="/architecture/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>docker
-        <ul>
-            
-        <li>
-            <a href="/docker/cheat-sheet.html">Cheat Sheet</a>
-        </li>
-        <li>
-            <a href="/docker/on-windows.html">Docker On Windows</a>
-        </li>
-        <li>
-            <a href="/docker/map-custom_folder-to-host.html">Map Custom Folder</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>git
-        <ul>
-            
-        <li>
-            <a href="/git/ssh-keys.html">SSH Key Generation</a>
-        </li>
-        <li>
-            <a href="/git/ssh-key-per-host.html">SSH Key Per Host</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>learning
-        <ul>
-            
-        <li>
-            <a href="/learning/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>meta
-        <ul>
-            
-        <li>
-            <a href="/meta/docker.html">Docker</a>
-        </li>
-        <li>
-            <a href="/meta/todo.html">Todo</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>ops
-        <ul>
-            
-        <li>
-            <a href="/ops/machine-bootsrap.html">Machine Bootstrap</a>
-        </li>
-        <li>
-            <a href="/ops/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>raspberry-pi
-        <ul>
-            
-        <li>
-            <a href="/raspberry-pi/sd-cards.html">SD Cards</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>synology
-        <ul>
-            
-        <li>
-            <a href="/synology/crash-plan.html">CrashPlan</a>
-        </li>
-        <li>
-            <a href="/synology/git.html">Git Backup</a>
-        </li>
-        <li>
-            <a href="/synology/gmvault.html">GMail Backup (GMVault)</a>
-        </li>
-        <li>
-            <a href="/synology/notifications.html">Notifications</a>
-        </li>
-        <li>
-            <a href="/synology/plex.html">Plex</a>
-        </li>
-        <li>
-            <a href="/synology/restore.html">Restore Plan</a>
-        </li>
-        <li>
-            <a href="/synology/ssh.html">SSH</a>
-        </li>
-        <li>
-            <a href="/synology/vpn.html">VPN</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>testing
-        <ul>
-            
-        <li>
-            <a href="/testing/BDD.html">BDD</a>
-        </li>
-        <li>
-            <a href="/testing/current-thinking.html">Current thinking</a>
-        </li>
-        <li>
-            <a href="/testing/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>tooling
-        <ul>
-            
-        <li>
-            <a href="/tooling/tfs.html">TFS</a>
-        </li>
-        <li>
-            <a href="/tooling/video.html">Video</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>web-development
-        <ul>
-            
-        <li>
-            <a href="/web-development/angular.html">Angular 2</a>
-        </li>
-        <li>
-            <a href="/web-development/npm.html">NPM</a>
-        </li>
-        <li>
-            <a href="/web-development/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-        </ul>
+    <div class="page-header">
+        <h3>SSH</h3>
     </div>
+
+    <div class="container">
+        <p>Enable the SSH service ( Control Panel -&gt; Terminal &amp; SNMP )</p>
+<p>Generate a public/private key pair using ssh-keygen</p>
+<p>Setup the users home directory for SSH keys by logging on as root</p>
+<pre><code class="language-bash">cd /var/services/homes
+chmod 755 User
+cd User
+mkdir .ssh
+cat &lt;path to public key&gt; &gt;&gt; .ssh/authorized_keys
+chown User .ssh
+chown User .ssh/authorized_keys
+chmod 700 .ssh
+chmod 644 .ssh/authorized_keys
+cd ..
+</code></pre>
+<p>Now convert the private key to a putty supported key using puttygen.</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://techanic.net/2014/04/12/configuring_ssh_and_scp_sftp_on_dsm_5.0_for_synology_diskstations.html">http://techanic.net/2014/04/12/configuring_ssh_and_scp_sftp_on_dsm_5.0_for_synology_diskstations.html</a></li>
+</ul>
+<p>You should now be able to connect using Putty to the NAS without using a password</p>
+
+    </div>
+
+</article>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>

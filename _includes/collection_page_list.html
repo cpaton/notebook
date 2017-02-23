@@ -1,8 +1,0 @@
-{% assign collection_pages = site.[include.collection.label] %}
-<li>{{ include.collection.nav_title }}</li>
-<ul>
-{% assign sorted_pages = collection_pages | sort: 'page_display_sort_order' %}    
-{% for collection_page in sorted_pages %}
-    <li><a href="{{ site.baseurl }}{{ collection_page.url }}">{{ collection_page.title}}</a></li>
-{% endfor %}
-</ul>

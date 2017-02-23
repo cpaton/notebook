@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notebook</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/" />
+    <title>VPN</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/synology/vpn.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,174 +155,32 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <ul>
+
+<article class="post">
     
-        <li>architecture
-        <ul>
-            
-        <li>
-            <a href="/architecture/CQRS.html">CQRS</a>
-        </li>
-        <li>
-            <a href="/architecture/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>docker
-        <ul>
-            
-        <li>
-            <a href="/docker/cheat-sheet.html">Cheat Sheet</a>
-        </li>
-        <li>
-            <a href="/docker/on-windows.html">Docker On Windows</a>
-        </li>
-        <li>
-            <a href="/docker/map-custom_folder-to-host.html">Map Custom Folder</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>git
-        <ul>
-            
-        <li>
-            <a href="/git/ssh-keys.html">SSH Key Generation</a>
-        </li>
-        <li>
-            <a href="/git/ssh-key-per-host.html">SSH Key Per Host</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>learning
-        <ul>
-            
-        <li>
-            <a href="/learning/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>meta
-        <ul>
-            
-        <li>
-            <a href="/meta/docker.html">Docker</a>
-        </li>
-        <li>
-            <a href="/meta/todo.html">Todo</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>ops
-        <ul>
-            
-        <li>
-            <a href="/ops/machine-bootsrap.html">Machine Bootstrap</a>
-        </li>
-        <li>
-            <a href="/ops/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>raspberry-pi
-        <ul>
-            
-        <li>
-            <a href="/raspberry-pi/sd-cards.html">SD Cards</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>synology
-        <ul>
-            
-        <li>
-            <a href="/synology/crash-plan.html">CrashPlan</a>
-        </li>
-        <li>
-            <a href="/synology/git.html">Git Backup</a>
-        </li>
-        <li>
-            <a href="/synology/gmvault.html">GMail Backup (GMVault)</a>
-        </li>
-        <li>
-            <a href="/synology/notifications.html">Notifications</a>
-        </li>
-        <li>
-            <a href="/synology/plex.html">Plex</a>
-        </li>
-        <li>
-            <a href="/synology/restore.html">Restore Plan</a>
-        </li>
-        <li>
-            <a href="/synology/ssh.html">SSH</a>
-        </li>
-        <li>
-            <a href="/synology/vpn.html">VPN</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>testing
-        <ul>
-            
-        <li>
-            <a href="/testing/BDD.html">BDD</a>
-        </li>
-        <li>
-            <a href="/testing/current-thinking.html">Current thinking</a>
-        </li>
-        <li>
-            <a href="/testing/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>tooling
-        <ul>
-            
-        <li>
-            <a href="/tooling/tfs.html">TFS</a>
-        </li>
-        <li>
-            <a href="/tooling/video.html">Video</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>web-development
-        <ul>
-            
-        <li>
-            <a href="/web-development/angular.html">Angular 2</a>
-        </li>
-        <li>
-            <a href="/web-development/npm.html">NPM</a>
-        </li>
-        <li>
-            <a href="/web-development/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-        </ul>
+    <div class="page-header">
+        <h3>VPN</h3>
     </div>
+
+    <div class="container">
+        <h3>Windows 10</h3>
+<p>The VPN client built into Windows 10 doesn't work with L2TP/IPSEC VPN servers behind NAT.  Need to change a registry key to get this work.</p>
+<p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent</p>
+<ul>
+<li>0 : No ability to establish connection behind NAT</li>
+<li>1 : Servers behind NAT</li>
+<li>2 : Server and client behind NAT</li>
+</ul>
+<p>Need to restart after making a change</p>
+<p>On Windows 10 there seems to be a 2 phase process to get this work.  First set the value to 1 reboot and then update to 2.</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/help/926179/how-to-configure-an-l2tp-ipsec-server-behind-a-nat-t-device-in-windows-vista-and-in-windows-server-2008">Knowlege base article</a></li>
+<li><a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/l2tp-registry-change-to-work-with-nat-t-not/f864ba86-a01b-42b5-93cd-e70c5fdf4fb3">Forum for Windows 10</a></li>
+</ul>
+
+    </div>
+
+</article>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>

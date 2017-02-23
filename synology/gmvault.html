@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notebook</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/" />
+    <title>GMail Backup (GMVault)</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/synology/gmvault.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,174 +155,74 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <ul>
+
+<article class="post">
     
-        <li>architecture
-        <ul>
-            
-        <li>
-            <a href="/architecture/CQRS.html">CQRS</a>
-        </li>
-        <li>
-            <a href="/architecture/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>docker
-        <ul>
-            
-        <li>
-            <a href="/docker/cheat-sheet.html">Cheat Sheet</a>
-        </li>
-        <li>
-            <a href="/docker/on-windows.html">Docker On Windows</a>
-        </li>
-        <li>
-            <a href="/docker/map-custom_folder-to-host.html">Map Custom Folder</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>git
-        <ul>
-            
-        <li>
-            <a href="/git/ssh-keys.html">SSH Key Generation</a>
-        </li>
-        <li>
-            <a href="/git/ssh-key-per-host.html">SSH Key Per Host</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>learning
-        <ul>
-            
-        <li>
-            <a href="/learning/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>meta
-        <ul>
-            
-        <li>
-            <a href="/meta/docker.html">Docker</a>
-        </li>
-        <li>
-            <a href="/meta/todo.html">Todo</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>ops
-        <ul>
-            
-        <li>
-            <a href="/ops/machine-bootsrap.html">Machine Bootstrap</a>
-        </li>
-        <li>
-            <a href="/ops/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>raspberry-pi
-        <ul>
-            
-        <li>
-            <a href="/raspberry-pi/sd-cards.html">SD Cards</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>synology
-        <ul>
-            
-        <li>
-            <a href="/synology/crash-plan.html">CrashPlan</a>
-        </li>
-        <li>
-            <a href="/synology/git.html">Git Backup</a>
-        </li>
-        <li>
-            <a href="/synology/gmvault.html">GMail Backup (GMVault)</a>
-        </li>
-        <li>
-            <a href="/synology/notifications.html">Notifications</a>
-        </li>
-        <li>
-            <a href="/synology/plex.html">Plex</a>
-        </li>
-        <li>
-            <a href="/synology/restore.html">Restore Plan</a>
-        </li>
-        <li>
-            <a href="/synology/ssh.html">SSH</a>
-        </li>
-        <li>
-            <a href="/synology/vpn.html">VPN</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>testing
-        <ul>
-            
-        <li>
-            <a href="/testing/BDD.html">BDD</a>
-        </li>
-        <li>
-            <a href="/testing/current-thinking.html">Current thinking</a>
-        </li>
-        <li>
-            <a href="/testing/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>tooling
-        <ul>
-            
-        <li>
-            <a href="/tooling/tfs.html">TFS</a>
-        </li>
-        <li>
-            <a href="/tooling/video.html">Video</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>web-development
-        <ul>
-            
-        <li>
-            <a href="/web-development/angular.html">Angular 2</a>
-        </li>
-        <li>
-            <a href="/web-development/npm.html">NPM</a>
-        </li>
-        <li>
-            <a href="/web-development/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-        </ul>
+    <div class="page-header">
+        <h3>GMail Backup (GMVault)</h3>
     </div>
+
+    <div class="container">
+        <p>Install Python 2.7 package from the package centre</p>
+<p>Setup the directory structure to run GMVault from</p>
+<p>Create an isolated Python virtual environment to run GMVault from. Blogs recommended using a specific version of python virtual environment as the lastest version on GitHub apparently had issues as of Jan 2015</p>
+<pre><code class="language-bash">cd GMVault
+wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.10.1.tar.gz
+tar xzf virtualenv-1.10.1.tar.gz
+python ./virtualenv-1.10.1/virtualenv.py gmvault_env
+</code></pre>
+<p>Install GMVault using the python package manager - requesting pre-requsites from within the new virutal environment</p>
+<pre><code class="language-bash">cd gmvault_env/bin
+./activate
+./pip install --pre gmvault
+</code></pre>
+<p>Test out the GMVault installation, note as Synology doesn't have a bash shell you need to run it explicitly using sh - you should get some output complaining about missing arguments</p>
+<pre><code class="language-bash">sh ./gmvault
+</code></pre>
+<p>Being logged in as the user you will run the backup regularly as do a test backup - this will setup the authentication with GMail using OAuth. This same trick can also be used if the authentication starts failing for some reason e.g. when google moved to only support OAuth v2. First you will need to remove any cached auth tokens from $HOME/.gmvault and then run the command</p>
+<pre><code class="language-bash">sh ./gmvault sync &lt;email address&gt;
+</code></pre>
+<p>Hit enter when it says it will open a browser, this will fail but a link will be displayed that you can use to setup the OAuth autorisation.</p>
+<p>After that you should be good to go ahead with the backups</p>
+<h3>Sample script</h3>
+<pre><code class="language-bash">#!/bin/sh
+ 
+NOW=$(date +&quot;%Y%m%d%H%M&quot;)
+LOGFILE=&quot;/volume1/Data/Backup/Log/email&#64;domain-$NOW.log&quot;
+CURTIME=$(date +&quot;%r&quot;)
+ 
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+echo &quot;$CURTIME: Starting email sync...&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+printf &quot;\n&quot; &gt;&gt; $LOGFILE
+ 
+whoami &gt;&gt; $LOGFILE
+set &gt;&gt; $LOGFILE
+ 
+cd /var/services/homes/admin
+/volume1/Data/Backup/GMail/GMVault/gmvault_env/bin/activate
+sh /volume1/Data/Backup/GMail/GMVault/gmvault_env/bin/gmvault sync -t full -d /volume1/Data/Backup/GMail/ emailaddress &gt;&gt; $LOGFILE 2&gt;&amp;1
+ 
+CURTIME=$(date +&quot;%r&quot;)
+ 
+printf &quot;\n&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+echo &quot;$CURTIME: email sync finished.&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+</code></pre>
+<p>To update gmvault to the latest version use pip</p>
+<pre><code class="language-bash">cd /volume1/Data/Backup/GMail/GMVault/gmvault_env/bin
+./pip install -U gmvault
+</code></pre>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://workingconcept.com/blog/synology-gmail-backup">http://workingconcept.com/blog/synology-gmail-backup</a></li>
+<li><a href="http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/">http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/</a></li>
+</ul>
+
+    </div>
+
+</article>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>

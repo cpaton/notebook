@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notebook</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/" />
+    <title>SSH Key Per Host</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/git/ssh-key-per-host.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,174 +155,42 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <ul>
+
+<article class="post">
     
-        <li>architecture
-        <ul>
-            
-        <li>
-            <a href="/architecture/CQRS.html">CQRS</a>
-        </li>
-        <li>
-            <a href="/architecture/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>docker
-        <ul>
-            
-        <li>
-            <a href="/docker/cheat-sheet.html">Cheat Sheet</a>
-        </li>
-        <li>
-            <a href="/docker/on-windows.html">Docker On Windows</a>
-        </li>
-        <li>
-            <a href="/docker/map-custom_folder-to-host.html">Map Custom Folder</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>git
-        <ul>
-            
-        <li>
-            <a href="/git/ssh-keys.html">SSH Key Generation</a>
-        </li>
-        <li>
-            <a href="/git/ssh-key-per-host.html">SSH Key Per Host</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>learning
-        <ul>
-            
-        <li>
-            <a href="/learning/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>meta
-        <ul>
-            
-        <li>
-            <a href="/meta/docker.html">Docker</a>
-        </li>
-        <li>
-            <a href="/meta/todo.html">Todo</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>ops
-        <ul>
-            
-        <li>
-            <a href="/ops/machine-bootsrap.html">Machine Bootstrap</a>
-        </li>
-        <li>
-            <a href="/ops/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>raspberry-pi
-        <ul>
-            
-        <li>
-            <a href="/raspberry-pi/sd-cards.html">SD Cards</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>synology
-        <ul>
-            
-        <li>
-            <a href="/synology/crash-plan.html">CrashPlan</a>
-        </li>
-        <li>
-            <a href="/synology/git.html">Git Backup</a>
-        </li>
-        <li>
-            <a href="/synology/gmvault.html">GMail Backup (GMVault)</a>
-        </li>
-        <li>
-            <a href="/synology/notifications.html">Notifications</a>
-        </li>
-        <li>
-            <a href="/synology/plex.html">Plex</a>
-        </li>
-        <li>
-            <a href="/synology/restore.html">Restore Plan</a>
-        </li>
-        <li>
-            <a href="/synology/ssh.html">SSH</a>
-        </li>
-        <li>
-            <a href="/synology/vpn.html">VPN</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>testing
-        <ul>
-            
-        <li>
-            <a href="/testing/BDD.html">BDD</a>
-        </li>
-        <li>
-            <a href="/testing/current-thinking.html">Current thinking</a>
-        </li>
-        <li>
-            <a href="/testing/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>tooling
-        <ul>
-            
-        <li>
-            <a href="/tooling/tfs.html">TFS</a>
-        </li>
-        <li>
-            <a href="/tooling/video.html">Video</a>
-        </li>
- 
-        </ul>
-        </li>
-    
-        <li>web-development
-        <ul>
-            
-        <li>
-            <a href="/web-development/angular.html">Angular 2</a>
-        </li>
-        <li>
-            <a href="/web-development/npm.html">NPM</a>
-        </li>
-        <li>
-            <a href="/web-development/resources.html">Resources</a>
-        </li>
- 
-        </ul>
-        </li>
-        </ul>
+    <div class="page-header">
+        <h3>SSH Key Per Host</h3>
     </div>
+
+    <div class="container">
+        <p>By default ssh keys are looked in a .ssh subdirectory of the users home directory. When connecting via git it will look for a id_rsa key by default. To use a different key for a specific host place a config file in that directory and add something along the lines of the following (make sure you use Linux line endings)</p>
+<pre>
+Host               storage
+    Hostname       storage
+    IdentityFile   ~/.ssh/synology_craig
+    IdentitiesOnly yes
+ 
+Host               bitbucket.org
+    Hostname       bitbucket.org
+    IdentityFile   ~/.ssh/id_rsa_bitbucket_user
+    IdentitiesOnly yes
+</pre>
+<p>Careful with the host name as what you use when connecting to remote git repository is how it is looked up. For example when connecting to bitbucket you will get a ssh spec like</p>
+<pre><code class="language-bash">git clone git&#64;bitbucket.org:user/repo.git
+</code></pre>
+<p>In this case it will look for a line in the config file with the Host of bitbucket.org - if you have used just bitbucket for the host it will not be found and the identity file you specified will not be used.</p>
+<p>To diagnose issues open a git-bash prompt and use</p>
+<pre><code class="language-bash">ssh -T -v git&#64;bitbucket.org
+</code></pre>
+<p>This will provide detailed logging of the attempted connection and show you which identity files it attempted to use.</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/4565700/specify-private-ssh-key-to-use-when-executing-shell-command-with-or-without-ruby">http://stackoverflow.com/questions/4565700/specify-private-ssh-key-to-use-when-executing-shell-command-with-or-without-ruby</a></li>
+</ul>
+
+    </div>
+
+</article>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>
