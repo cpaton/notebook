@@ -21,19 +21,19 @@ Pipelines.Add("PageTree",
 Pipelines.Add("RenderPages",
     Documents("Pages"),
     Markdown(),
+    Replace("site.asset-base-url", Settings["site.asset-base-url"]),
     Razor().WithLayout("/shared/_page.cshtml"),
     WriteFiles()
 );
 
-Pipelines.Add("Test",
+Pipelines.Add("FrontPage",
     ReadFiles("**/{!_,}*.cshtml"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".cshtml", ".html")).AbsoluteUri),
-    //Meta("AllDocs", @ctx2.Documents["Pages"]),
     Razor().WithLayout("/shared/_default.cshtml"),
     WriteFiles(".html")
 );    
 
 Pipelines.Add("Resources",
-	CopyFiles("**/*.css"),
+	CopyFiles("css/*.css"),
 	CopyFiles("js/*.js")
 );    
