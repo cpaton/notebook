@@ -12,7 +12,7 @@
             <div id="navbar" class="navbar-collapse collapse">
 @{
     var docs = Documents["PageTree"];
-    var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null);
+    var rootDocs = docs.Where(x => x.Get<IDocument>("Parent") == null).OrderBy(x => x.Get<object[]>("TreePath").Last().ToString());
 
     foreach (var rootDoc in rootDocs) {
         var documentPath = rootDoc.Get<object[]>("TreePath", new object[] {});

@@ -6,6 +6,16 @@ Settings["site.asset-base-url"] = "http://notebook-assets.craigpaton.uk/notebook
 Settings["site.title"] = "Notebook";
 Settings["site.description"] = "Programmers notebook";
 
+public static int SortPages(IDocument x, IDocument y) {
+    var directoryComparison = x.Source.Directory.FullPath.CompareTo(y.Source.Directory.FullPath);
+    if (directoryComparison != 0)
+    {
+        return directoryComparison;
+    }
+
+    return x.String("Title").CompareTo(y.String("Title"));
+}
+
 Pipelines.Add("Pages",
     ReadFiles(@"**\*.md"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".md", ".html")).AbsoluteUri),
@@ -15,7 +25,7 @@ Pipelines.Add("Pages",
 
 Pipelines.Add("PageTree",
     Documents("Pages"),
-    Tree().WithNesting(true, true)
+    Tree().WithNesting(true, true).WithSort(SortPages)
 );
 
 Pipelines.Add("RenderPages",
