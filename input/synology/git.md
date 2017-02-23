@@ -8,7 +8,7 @@ Central repository needs to be bare to support easy pushing
 git init --bare <Repo Name>
 ```
 
-Then setup a copy of the Git Repo, setting the core.filemode configuration option to false. This stops git thinking there are differences on Linux based purely on permisson differences
+Setup a copy of the Git Repo, setting the core.filemode configuration option to false. This stops git thinking there are differences on Linux based purely on permisson differences
 
 ``` bash
 git clone -c core.filemode=false <Path to Repo> <Repo Name>
