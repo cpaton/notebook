@@ -37,3 +37,8 @@ Pipelines.Add("Resources",
 	CopyFiles("css/*.css"),
 	CopyFiles("js/*.js")
 );    
+
+Pipelines.Add("GitHubPages",
+    CopyFiles("CNAME"),
+    CopyFiles(".nojekyll")
+);
