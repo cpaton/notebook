@@ -6,7 +6,7 @@ Download the Plex server package from [http://plex.tv](http://plex.tv) for NAS
 
 The spk package file may not be detected by the NAS device and you might get an error
 
-![Synology Package Not Supported](site.asset-base-urlSynology_Package_Not_Supported.png)
+![Synology Package Not Supported](site.asset-base-url/Synology_Package_Not_Supported.png)
 
 This is because the NAS device may be using a different architecture to that listed as supported in the package. Find the architecture for your synology device [https://github.com/SynoCommunity/spksrc/wiki/Architecture-per-Synology-model](https://github.com/SynoCommunity/spksrc/wiki/Architecture-per-Synology-model) may help
 
