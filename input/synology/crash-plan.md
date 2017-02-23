@@ -44,13 +44,13 @@ I 10/01/16 11:06AM CrashPlan stopped, version 4.7.0, GUID 674279968953860117
 
 Since around v4.7.0 CrashPlan switch to delivering the upgrades archive packages that can be extracted via the cpio utility.  The upgrade comes as an upgrade.cpi file.  First this needs to be unzipped, then the cpio utility can extract the contents.  Once compete the upgrade file should be removed so that it doesn't attempt to apply the upgrade when the service next starts
 
-{% highlight shell %}
+``` bash
 cd /var/packages/CrashPlan/target
 mv ./upgrade.cpi upgrade.cpi.gz
 gunzip upgrade.cpi.gz
 bin/cpio -i < upgrade.cpi
 rm upgrade.cpi
-{% endhighlight %}
+```
 
 Should be able to start the service now
 
@@ -86,17 +86,17 @@ Essence of the upgrade is to copy jar files into ../../lib, if the upgrade scrip
 
 Had issues using the unzip command to extract and copy the files directly to the install location, so choose to unzip into a temporary directory and manually copy the files. General gist of the commands are
 
-{% highlight shell %}
+``` bash
 unzip -o /var/packages/CrashPlan/target/upgrade/1388728800370.jar *.jar -d /var/packages/CrashPlan/target/lib/
 unzip -o /var/packages/CrashPlan/target/upgrade/1388728800370.jar run.conf -d /var/packages/CrashPlan/target/bin/
 unzip -o /var/packages/CrashPlan/target/upgrade/1388728800370.jar lang/* -d /var/packages/CrashPlan/target/
 ls -l /var/packages/CrashPlan/target/upgrade/1388728800370.*
 mv /var/packages/CrashPlan/target/upgrade/1388728800370.whatevervalue/upgrade.sh /var/packages/CrashPlan/target/upgrade/1388728800370.whatevervalue/upgrade.sh.old
-{% endhighlight %}
+```
 
 or my version
 
-{% highlight shell %}
+``` bash
 cd /var/packages/CrashPlan/target/upgrade/
 mkdir tmp
 cp 1425276000420.jar tmp
@@ -108,13 +108,13 @@ cd ..
 rm -r tmp/
 1425276000420.1431634799825/
 mv upgrade.sh upgrade.sh.old
-{% endhighlight %}
+```
 
 Should now be able to start the package again from the package manager
 
-{% highlight shell %}
+``` bash
 tail -f /var/packages/CrashPlan/target/log/history.log.0
-{% endhighlight %}
+```
 
 #### Starts then stops immediately
 

@@ -8,7 +8,7 @@ Generate a public/private key pair using ssh-keygen
 
 Setup the users home directory for SSH keys by logging on as root
 
-{% highlight shell %}
+``` bash
 cd /var/services/homes
 chmod 755 User
 cd User
@@ -19,7 +19,7 @@ chown User .ssh/authorized_keys
 chmod 700 .ssh
 chmod 644 .ssh/authorized_keys
 cd ..
-{% endhighlight %}
+```
 
 Now convert the private key to a putty supported key using puttygen.
 
