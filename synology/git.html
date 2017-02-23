@@ -166,7 +166,7 @@
         <p>Central repository needs to be bare to support easy pushing</p>
 <pre><code class="language-bash">git init --bare &lt;Repo Name&gt;
 </code></pre>
-<p>Then setup a copy of the Git Repo, setting the core.filemode configuration option to false. This stops git thinking there are differences on Linux based purely on permisson differences</p>
+<p>Setup a copy of the Git Repo, setting the core.filemode configuration option to false. This stops git thinking there are differences on Linux based purely on permisson differences</p>
 <pre><code class="language-bash">git clone -c core.filemode=false &lt;Path to Repo&gt; &lt;Repo Name&gt;
 </code></pre>
 <p>Within CrashPlan make sure that the .git directory has been setup to be excluded. Settings -&gt; Backup -&gt; Filename Exclusions.</p>
