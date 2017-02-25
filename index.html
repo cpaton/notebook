@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -338,6 +338,9 @@
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css//bootstrap-toc.min.css">
+<script src="/js/bootstrap-toc.min.js"></script>
+
 <script lang="javascript">
 (function($){
     $(document).ready(function(){
@@ -350,4 +353,12 @@
     });
 })(jQuery);
 </script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 110
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
 </html>

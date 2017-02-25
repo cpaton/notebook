@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -156,13 +156,12 @@
         </div>
     </nav>
 
-<article class="post">
-    
-    <div class="page-header">
-        <h3>Machine Bootstrap</h3>
-    </div>
+<div class="container">
 
-    <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>Machine Bootstrap</h3>
+            <hr />
         <h3>Boxstarer</h3>
 <p>Boxstarter provides a way to easily bootstrap a machine by installing packages from chocolately plus it provides utility functions for configuring windows. It supports starting from nothing via visiting a URL which accepts a path to a configuration script that is publicly accessbile e.g. GitHub gist. This URL uses a Click Once installer to install Boxstarter and then run the script. Initial trials with this approach weren't ideal</p>
 <p>Uses a private version of chocolately. So after boxstarter is complete chocolately is not available on the machine
@@ -174,9 +173,12 @@ As a result decided to get with a seperate powershell script as the start point.
 <li>Takes a template box starter script and adds paths to packages.config files at the end to specify the chocolately packages to install</li>
 </ul>
 
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
     </div>
-
-</article>
+</div>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>
@@ -192,6 +194,9 @@ As a result decided to get with a seperate powershell script as the start point.
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css//bootstrap-toc.min.css">
+<script src="/js/bootstrap-toc.min.js"></script>
+
 <script lang="javascript">
 (function($){
     $(document).ready(function(){
@@ -204,4 +209,12 @@ As a result decided to get with a seperate powershell script as the start point.
     });
 })(jQuery);
 </script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 110
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
 </html>

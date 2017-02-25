@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -156,13 +156,12 @@
         </div>
     </nav>
 
-<article class="post">
-    
-    <div class="page-header">
-        <h3>NPM</h3>
-    </div>
+<div class="container">
 
-    <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>NPM</h3>
+            <hr />
         <h1>Versions</h1>
 <ul>
 <li>Explict version (no modifier) - 1.2.3</li>
@@ -170,9 +169,12 @@
 <li>Latest major version (^) - ^1.2.3 =&gt; &gt;=1.2.3 &lt; 2.0.0</li>
 </ul>
 
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
     </div>
-
-</article>
+</div>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>
@@ -188,6 +190,9 @@
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css//bootstrap-toc.min.css">
+<script src="/js/bootstrap-toc.min.js"></script>
+
 <script lang="javascript">
 (function($){
     $(document).ready(function(){
@@ -200,4 +205,12 @@
     });
 })(jQuery);
 </script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 110
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
 </html>

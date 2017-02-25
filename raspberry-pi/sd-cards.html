@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -156,20 +156,22 @@
         </div>
     </nav>
 
-<article class="post">
-    
-    <div class="page-header">
-        <h3>SD Cards</h3>
-    </div>
+<div class="container">
 
-    <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>SD Cards</h3>
+            <hr />
         <p>Model B had an SD card slot. Model B+ and Raspberry Pi 2 moved to a Micro SD card.</p>
 <p>Suggestion is to use sizes 32GB or less, as the standards say that SD cards of size more than 32GB should be formatted as exFAT. This scheme is not supported by the Raspberry Pi and hence won't boot <a href="http://www.raspberrypi.org/forums/viewtopic.php?f=91&amp;t=83220&amp;p=588601#p588601">(http://www.raspberrypi.org/forums/viewtopic.php?f=91&amp;t=83220&amp;p=588601#p588601)</a></p>
 <p>SD card speeds are split into categories. When prefixed with class the number relates to MB/s e.g. class 3 is slower than class 5. Higher speeds have dropped the class prefix and are known as UHS - <a href="https://www.sdcard.org/developers/overview/speed_class/">https://www.sdcard.org/developers/overview/speed_class/</a></p>
 
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
     </div>
-
-</article>
+</div>
 <footer class="footer">
   <div class="container">
     <p class="text-muted">Craig Paton</p>
@@ -185,6 +187,9 @@
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css//bootstrap-toc.min.css">
+<script src="/js/bootstrap-toc.min.js"></script>
+
 <script lang="javascript">
 (function($){
     $(document).ready(function(){
@@ -197,4 +202,12 @@
     });
 })(jQuery);
 </script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 110
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
 </html>
