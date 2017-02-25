@@ -162,11 +162,11 @@
         <div class="col-md-9">
             <h3>Cheat Sheet</h3>
             <hr />
-        <h3>Ctrl+C support</h3>
+        <h3 id="ctrlc-support">Ctrl+C support</h3>
 <p>need to add -t -i to support sending ctrl+c to process within powershell</p>
 <pre><code class="language-powershell">docker run -v '/c/_cp/Git/notebook.wiki:/wiki' -p 80:80 -t -i notebook-gollum
 </code></pre>
-<h3>Configuring PowerShell</h3>
+<h3 id="configuring-powershell">Configuring PowerShell</h3>
 <p>Need to start the docker machine (host for containers)</p>
 <pre><code class="language-powershell">docker-machine start default
 </code></pre>
@@ -174,7 +174,7 @@
 <pre><code class="language-powershell">docker-machine env default --shell powershell | invoke-expression
 </code></pre>
 <p>should then be able to use the docker command line tool e.g. docker images</p>
-<h3>IP of the machine</h3>
+<h3 id="ip-of-the-machine">IP of the machine</h3>
 <pre><code class="language-bash">docker-machine ip defaulta
 </code></pre>
 
