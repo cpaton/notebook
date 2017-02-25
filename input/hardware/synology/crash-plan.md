@@ -4,9 +4,9 @@ title: CrashPlan
 
 CrashPlan consists of two parts, a server and a client that connects to the server for configuration and monitoring. On a NAS device you install just the server in what is called headless mode. Follow the instructions from
 
-* [http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx](http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx)
-* [http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/](http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/)
-* [https://miketabor.com/install-crashplan-synology/](https://miketabor.com/install-crashplan-synology/) - slighty more up to date than PC load letter
+* [Hanselman](http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx)
+* [PC Load Letter](http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/)
+* [Mike Tabor](https://miketabor.com/install-crashplan-synology/) - slighty more up to date than PC load letter
 
 Essentially
 
@@ -15,12 +15,24 @@ Essentially
 * Install the CrashPlan package from PCLoadLetter
 * Setup client on a PC to connect to the server running on the NAS and configure it
 
-Crashplan via docker
+# Docker
 
-* [https://miketabor.com/run-crashplan-docker-synology-nas/](https://miketabor.com/run-crashplan-docker-synology-nas/)
-* [https://github.com/JrCs/docker-crashplan](https://github.com/JrCs/docker-crashplan)
+Information:
 
-Not been able to get it working yet.  Container starts and able to connect from windows client but not able to successfully enter the credentials.  Client is reporting the error CPC_UNAVILABLE
+* [Mike Tabor](https://miketabor.com/run-crashplan-docker-synology-nas/)
+* [Dockerfile](https://github.com/JrCs/docker-crashplan)
+
+When the container is running you can open a terminal from within the synology UI to get the guid you need to connect to the server from the windows server
+
+``` bash
+cat /var/lib/crashplan/.ui_info
+```
+Volume mounts are setup as
+
+File/Folder: /Data
+Mount Path: /volume1/Data
+
+Think this had to be setup from the command line once and could not be setup from the synology UI directly.  Wasn't able to mount the root of the volume as per the instructions and had to use subfolders.
 
 # Windows Client
 
