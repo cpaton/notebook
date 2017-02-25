@@ -7,13 +7,28 @@ Settings["site.title"] = "Notebook";
 Settings["site.description"] = "Programmers notebook";
 
 public static int SortPages(IDocument x, IDocument y) {
+    if (x.Source == null && y.Source == null)
+    {
+        return x.String("RelativeFilePath").CompareTo(y.String("RelativeFilePath"));
+    }
+
+    if (x.Source == null)
+    {
+        return 1;
+    }
+
+    if (y.Source == null)
+    {
+        return -1;
+    }
+
     var directoryComparison = x.Source.Directory.FullPath.CompareTo(y.Source.Directory.FullPath);
     if (directoryComparison != 0)
     {
         return directoryComparison;
     }
 
-    return x.String("Title").CompareTo(y.String("Title"));
+    return x.String("Title", string.Empty).CompareTo(y.String("Title", string.Empty));
 }
 
 Pipelines.Add("Pages",

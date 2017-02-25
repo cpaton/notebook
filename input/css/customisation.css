@@ -4,7 +4,7 @@ html {
 }
 body {
   /* To cope with the fixed navbar at the top */
-  margin-top: 110px;
+  margin-top: 55px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font: 16px;
