@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CrashPlan</title>
     <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/crash-plan.html" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
+    <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
 </head>
@@ -159,9 +161,9 @@
             <hr />
         <p>CrashPlan consists of two parts, a server and a client that connects to the server for configuration and monitoring. On a NAS device you install just the server in what is called headless mode. Follow the instructions from</p>
 <ul>
-<li><a href="http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx">http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx</a></li>
-<li><a href="http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/">http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/</a></li>
-<li><a href="https://miketabor.com/install-crashplan-synology/">https://miketabor.com/install-crashplan-synology/</a> - slighty more up to date than PC load letter</li>
+<li><a href="http://www.hanselman.com/blog/UPDATED2014HowToSetupCrashPlanCloudBackupOnASynologyNASRunningDSM50.aspx">Hanselman</a></li>
+<li><a href="http://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/">PC Load Letter</a></li>
+<li><a href="https://miketabor.com/install-crashplan-synology/">Mike Tabor</a> - slighty more up to date than PC load letter</li>
 </ul>
 <p>Essentially</p>
 <ul>
@@ -170,12 +172,19 @@
 <li>Install the CrashPlan package from PCLoadLetter</li>
 <li>Setup client on a PC to connect to the server running on the NAS and configure it</li>
 </ul>
-<p>Crashplan via docker</p>
+<h1 id="docker">Docker</h1>
+<p>Information:</p>
 <ul>
-<li><a href="https://miketabor.com/run-crashplan-docker-synology-nas/">https://miketabor.com/run-crashplan-docker-synology-nas/</a></li>
-<li><a href="https://github.com/JrCs/docker-crashplan">https://github.com/JrCs/docker-crashplan</a></li>
+<li><a href="https://miketabor.com/run-crashplan-docker-synology-nas/">Mike Tabor</a></li>
+<li><a href="https://github.com/JrCs/docker-crashplan">Dockerfile</a></li>
 </ul>
-<p>Not been able to get it working yet.  Container starts and able to connect from windows client but not able to successfully enter the credentials.  Client is reporting the error CPC_UNAVILABLE</p>
+<p>When the container is running you can open a terminal from within the synology UI to get the guid you need to connect to the server from the windows server</p>
+<pre><code class="language-bash">cat /var/lib/crashplan/.ui_info
+</code></pre>
+<p>Volume mounts are setup as</p>
+<p>File/Folder: /Data
+Mount Path: /volume1/Data</p>
+<p>Think this had to be setup from the command line once and could not be setup from the synology UI directly.  Wasn't able to mount the root of the volume as per the instructions and had to use subfolders.</p>
 <h1 id="windows-client">Windows Client</h1>
 <p>Two items need to be configured to use the windows client to connect to the Synology daemon</p>
 <ul>
@@ -288,7 +297,6 @@ STACKTRACE:: java.lang.NumberFormatException: For input string: ""
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<link rel="stylesheet" href="/css//bootstrap-toc.min.css">
 <script src="/js/bootstrap-toc.min.js"></script>
 
 <script lang="javascript">
