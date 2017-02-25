@@ -22,16 +22,16 @@ Crashplan via docker
 
 Not been able to get it working yet.  Container starts and able to connect from windows client but not able to successfully enter the credentials.  Client is reporting the error CPC_UNAVILABLE
 
-### Windows Client
+# Windows Client
 
 Two items need to be configured to use the windows client to connect to the Synology daemon
 
 * **C:\Program Files\CrashPlan\conf\ui.properties** need to update serviceHost to the IP address of the Synology
 * Copy the file **/var/lib/crashplan/.ui_info** from the Synology to **C:\ProgramData\CrashPlan\\.ui_info** (this file includes a port number and a GUID). The last part is the IP address of the Synology device this should be updated
 
-### Fails to start
+# Fails to start
 
-#### Installing upgrade then stops >= 4.7.0
+## Installing upgrade then stops >= 4.7.0
 
 <pre>
 I 10/01/16 11:05AM CrashPlan started, version 4.7.0, GUID 674279968953860117
@@ -58,7 +58,7 @@ The comments of this (blog post)[https://pcloadletter.co.uk/2012/01/30/crashplan
 
 This (post)[https://crashplan.setepontos.com/crashplan-4-7-0-installation/] specifically talks about v4.7.0
 
-#### Repairing upgrade <4.7.0
+## Repairing upgrade <4.7.0
 
 CrashPlan package fails to start on the synology. Viewing the log file from within the package manager shows something like
 
@@ -116,7 +116,7 @@ Should now be able to start the package again from the package manager
 tail -f /var/packages/CrashPlan/target/log/history.log.0
 ```
 
-#### Starts then stops immediately
+## Starts then stops immediately
 
 Viewing the log from the package manager shows that the service starts and then stops immediately not reporting any more information
 

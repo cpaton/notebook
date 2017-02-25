@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-9">
         @if (!string.IsNullOrEmpty(Model.Get("title", ""))) {
-            <h3>@Model["title"]</h3>
+            <h1>@Model["title"]</h1>
             <hr />
         }
         @RenderBody()
