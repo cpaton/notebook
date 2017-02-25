@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Git Backup</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/git.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,12 +155,17 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Git Backup</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
-</ul>
+        <p>Central repository needs to be bare to support easy pushing</p>
+<pre><code class="language-bash">git init --bare &lt;Repo Name&gt;
+</code></pre>
+<p>Setup a copy of the Git Repo, setting the core.filemode configuration option to false. This stops git thinking there are differences on Linux based purely on permisson differences</p>
+<pre><code class="language-bash">git clone -c core.filemode=false &lt;Path to Repo&gt; &lt;Repo Name&gt;
+</code></pre>
+<p>Within CrashPlan make sure that the .git directory has been setup to be excluded. Settings -&gt; Backup -&gt; Filename Exclusions.</p>
+<pre><code class="language-bash">.*/\.git.*
+</code></pre>
 
         </div>
         <div class="col-md-3">

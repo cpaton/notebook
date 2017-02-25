@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Notifications</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/notifications.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,11 +155,24 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Notifications</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+        <p>/usr/syno/bin/synodsmnotify can be used to send notifications to the DSM interface. To send to a user you need to be able to write to that users notification file - this requires permissions to be setup - as by default only root can write to it</p>
+<pre><code class="language-bash">chmod 666 /usr/syno/etc/preference/admin/dsmnotify
+</code></pre>
+<p>Notifications can then be sent by</p>
+<pre><code class="language-bash">/usr/syno/bin/synodsmnotify &quot;admin&quot; &quot;Title&quot; &quot;Message&quot;
+</code></pre>
+<p>Add admin user so it can send emails - as root</p>
+<pre><code class="language-bash">synogroup --member maildrop admin
+</code></pre>
+<p>Then as the admin user you should be able to send mail using</p>
+<pre><code class="language-bash">/usr/bin/php -r &quot;mail('&lt;to address&gt;', 'Subject', 'Body', 'From: &lt;address&gt;');&quot;
+</code></pre>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://forum.synology.com/enu/viewtopic.php?f=32&amp;t=79334">http://forum.synology.com/enu/viewtopic.php?f=32&amp;t=79334</a></li>
+<li><a href="http://forum.synology.com/enu/viewtopic.php?f=27&amp;t=55627">http://forum.synology.com/enu/viewtopic.php?f=27&amp;t=55627</a></li>
 </ul>
 
         </div>

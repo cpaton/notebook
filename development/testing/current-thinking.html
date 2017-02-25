@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Current thinking</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/testing/current-thinking.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,11 +155,11 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Current thinking</h1>
             <hr />
         <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+<li>Don't test too small a unit.  Prefer component style tests over test class per production class.  Testing components results in resilient tests in the face of change that are not tied to implementation.</li>
+<li>Use mocks sparingly.  Mock at process boundaries but rarely for classes within a boundary</li>
 </ul>
 
         </div>

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Docker On Windows</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/docker/on-windows.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,12 +155,23 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Docker On Windows</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
-</ul>
+        <p>Docker quickstart terminal installed with Docker for windows runs</p>
+<pre><code class="language-powershell">&quot;C:\Program Files\Git\bin\bash.exe&quot; --login -i &quot;C:\Program Files\Docker Toolbox\start.sh&quot;
+</code></pre>
+<p>This script creates a VirtualBox machine if one doesn't already exist and then uses <code>docker-machine</code> to start it and then reads configuration information from that machine using <code>docker-machine env default</code> to setup shell variables</p>
+<p>To do the equivalent for PowerShell use the following</p>
+<pre><code class="language-powershell"># Make sure docker host is running
+if ( ( docker-machine status default ) -ne &quot;Running&quot; ) {
+    docker-machine start default
+    &quot;yes&quot; | docker-machine regenerate-certs default
+}
+
+# Get machine information and setup the environment so that we can use the docker tool
+docker-machine env default --shell powershell | Invoke-Expression
+Write-Host ( &quot;Docker machine IP address is {0}&quot; -f ( docker-machine ip default ) )
+</code></pre>
 
         </div>
         <div class="col-md-3">

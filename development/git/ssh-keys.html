@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>SSH Key Generation</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/git/ssh-keys.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,12 +155,18 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>SSH Key Generation</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
-</ul>
+        <p>Can do this via a one-liner in powershell e.g. to create a key called github</p>
+<pre><code class="language-powershell">&amp; 'C:\Program Files (x86)\Git\bin\sh.exe' --login -i -c 'ssh-keygen -t rsa -b 4096 -C &quot;&quot;EMAIL_ADDRESS&quot;&quot; -f ~/.ssh/github -N &quot;&quot;&quot;&quot;'
+</code></pre>
+<p>Alternatively from a GIT bash prompt and run the following</p>
+<pre><code class="language-shell">ssh-keygen -t rsa -b 4096 -C &quot;your_email&#64;example.com&quot;
+</code></pre>
+<p>Accept the default location for the key for now. After it has complete rename the key found in %USERPROFILE%.ssh to the name of the git host e.g. github or bitbucket. Need to do this for both the private and public key parts. Then use the instructions below to setup an ssh config file to get it to pick the correct git depending on the remote host.</p>
+<p>Add the public key to the git host via their website or other means. Now you can test connectivity e.g.</p>
+<pre><code class="language-shell">ssh -T -v git&#64;bitbucket.org
+</code></pre>
 
         </div>
         <div class="col-md-3">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/testing/resources.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -157,9 +157,35 @@
         <div class="col-md-9">
             <h1>Resources</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+        <h1 id="videos">Videos</h1>
+<h2 id="test-automation-without-a-headache-five-key-patterns">Test automation without a headache: Five key patterns</h2>
+<p><iframe src="https://player.vimeo.com/video/154289460" width="500" height="281" frameborder="0" allowfullscreen></iframe></p>
+<p><strong>Synopsis</strong></p>
+<p>Patterns for test automation that provide value of time and don't slow down a project over time</p>
+<p><strong>Quotes/Thoughts</strong></p>
+<ul>
+<li>The purpose of automated testing is to be able to make change quicker</li>
+<li>Tests provide value on two occasions.  The first time they pass so that you know the feature works.  When they fail following change so that you know something is broken.  All the time they run and pass they are not really providing value.  Therefore optimise for diagnosing a failure when it happens</li>
+<li>Split tests into 3 logical layers/components</li>
+<li>Business rules - Business language (Depends on tool)</li>
+<li>Workflow - Calls to application API (Depends on application)</li>
+<li>Interactions - technical infrastructure concerns e.g. talking to the database/queues etc (Depends on application)</li>
+</ul>
+<h2 id="testing-with-no-harm">Testing with No Harm</h2>
+<p><iframe src="https://player.vimeo.com/video/154312751" width="500" height="281" frameborder="0" allowfullscreen></iframe></p>
+<p><strong>Synopsis</strong></p>
+<p>We have to change our applications to make them testable, in doing so we can cause harm to the application</p>
+<p><strong>Quotes/Thoughts</strong></p>
+<ul>
+<li>Tests are as important as production code, but not more important.</li>
+<li>Putting tests firsts ala TDD with tests driving the design can lead to creating fake abstractions to support testing.  This can lead to too many mocks and overspecified tests that are tightly linked to implementation</li>
+<li>Tests should define the behaviour of a system and not its structure</li>
+<li>Solution -&gt; Test larger units, don't focus on test class per production class.  This leads to testing behaviour and not implementation.  Have a mix of component, integration and end-to-end tests</li>
+<li>Name your tests after a scenario and not a class being tested</li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://david.heinemeierhansson.com/2014/test-induced-design-damage.html">DHH Test Induced Design Damage</a></li>
 </ul>
 
         </div>

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>TFS</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/tooling/tfs.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,11 +155,22 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>TFS</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+        <p>Experiences with working TFS 2015 on premise update 2</p>
+<h1 id="custom-task-to-provide-access-to-agent-internals">Custom task to provide access to agent internals</h1>
+<h1 id="viewing-secret-variables">Viewing secret variables</h1>
+<h1 id="artifacts">Artifacts</h1>
+<h1 id="limitations">Limitations</h1>
+<ul>
+<li><strong>build triggers and variables</strong>  Able to schedule builds but cannot provide variables values when the build is run, only the defaults are available.  Similarliy other triggers via CI or branch policies don't suppor specify variables values.   Without this capability it leads to having to create multiple copies of builds that are almost identical which coudl have been a single build definition with different variable values</li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://github.com/Microsoft/vsts-task-lib">VSTS Task SDK</a>  PowerShell module for working with TF build.  Designed to work with build agents 1.9.5 and up.</li>
+<li><a href="https://github.com/Microsoft/vsts-tasks">VSTS Tasks</a> Implementation of custom tasks that come in the box</li>
+<li><a href="https://github.com/Microsoft/vsts-agent/">VSTS Agent</a> v2 agent that will replace the current closed source agent</li>
+<li><a href="https://www.visualstudio.com/en-us/docs/integrate/api/overview">TFS Rest API</a></li>
 </ul>
 
         </div>

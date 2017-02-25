@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Video</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/misc/utility/video.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,12 +155,15 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Video</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
-</ul>
+        <h3 id="splitting-large-files">Splitting large files</h3>
+<p>Run the command to ffmpeg to open the file and output information e.g. how long it is</p>
+<pre><code class="language-bash">docker run -v /c/_cp/temp:/tmp/ffmpeg opencoconut/ffmpeg -i '/tmp/ffmpeg/Live Six Nations Rugby-Italy v Wales-1300-20170205.ts'
+</code></pre>
+<p>Then to split it into multiple smaller files</p>
+<pre><code class="language-bash">docker run -v /c/_cp/temp:/tmp/ffmpeg opencoconut/ffmpeg -i '/tmp/ffmpeg/Live Six Nations Rugby-Italy v Wales-1300-20170205.ts' -vcodec copy -acodec copy -ss 00:00:00 -t 01:30:00 -sn 'Part 1.ts' -vcodec copy -acodec copy -ss 01:30:00 -t 03:20:55 -sn 'Part 2.ts'
+</code></pre>
 
         </div>
         <div class="col-md-3">

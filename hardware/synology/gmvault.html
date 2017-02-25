@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>GMail Backup (GMVault)</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/gmvault.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,11 +155,63 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>GMail Backup (GMVault)</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+        <p>Install Python 2.7 package from the package centre</p>
+<p>Setup the directory structure to run GMVault from</p>
+<p>Create an isolated Python virtual environment to run GMVault from. Blogs recommended using a specific version of python virtual environment as the lastest version on GitHub apparently had issues as of Jan 2015</p>
+<pre><code class="language-bash">cd GMVault
+wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.10.1.tar.gz
+tar xzf virtualenv-1.10.1.tar.gz
+python ./virtualenv-1.10.1/virtualenv.py gmvault_env
+</code></pre>
+<p>Install GMVault using the python package manager - requesting pre-requsites from within the new virutal environment</p>
+<pre><code class="language-bash">cd gmvault_env/bin
+./activate
+./pip install --pre gmvault
+</code></pre>
+<p>Test out the GMVault installation, note as Synology doesn't have a bash shell you need to run it explicitly using sh - you should get some output complaining about missing arguments</p>
+<pre><code class="language-bash">sh ./gmvault
+</code></pre>
+<p>Being logged in as the user you will run the backup regularly as do a test backup - this will setup the authentication with GMail using OAuth. This same trick can also be used if the authentication starts failing for some reason e.g. when google moved to only support OAuth v2. First you will need to remove any cached auth tokens from $HOME/.gmvault and then run the command</p>
+<pre><code class="language-bash">sh ./gmvault sync &lt;email address&gt;
+</code></pre>
+<p>Hit enter when it says it will open a browser, this will fail but a link will be displayed that you can use to setup the OAuth autorisation.</p>
+<p>After that you should be good to go ahead with the backups</p>
+<h1 id="sample-script">Sample script</h1>
+<pre><code class="language-bash">#!/bin/sh
+ 
+NOW=$(date +&quot;%Y%m%d%H%M&quot;)
+LOGFILE=&quot;/volume1/Data/Backup/Log/email&#64;domain-$NOW.log&quot;
+CURTIME=$(date +&quot;%r&quot;)
+ 
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+echo &quot;$CURTIME: Starting email sync...&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+printf &quot;\n&quot; &gt;&gt; $LOGFILE
+ 
+whoami &gt;&gt; $LOGFILE
+set &gt;&gt; $LOGFILE
+ 
+cd /var/services/homes/admin
+/volume1/Data/Backup/GMail/GMVault/gmvault_env/bin/activate
+sh /volume1/Data/Backup/GMail/GMVault/gmvault_env/bin/gmvault sync -t full -d /volume1/Data/Backup/GMail/ emailaddress &gt;&gt; $LOGFILE 2&gt;&amp;1
+ 
+CURTIME=$(date +&quot;%r&quot;)
+ 
+printf &quot;\n&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+echo &quot;$CURTIME: email sync finished.&quot; &gt;&gt; $LOGFILE
+echo &quot;------------------------------------&quot; &gt;&gt; $LOGFILE
+</code></pre>
+<p>To update gmvault to the latest version use pip</p>
+<pre><code class="language-bash">cd /volume1/Data/Backup/GMail/GMVault/gmvault_env/bin
+./pip install -U gmvault
+</code></pre>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="http://workingconcept.com/blog/synology-gmail-backup">http://workingconcept.com/blog/synology-gmail-backup</a></li>
+<li><a href="http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/">http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/</a></li>
 </ul>
 
         </div>

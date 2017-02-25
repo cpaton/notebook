@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>VPN</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/vpn.html" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" media="screen">
@@ -155,11 +155,21 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>VPN</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
+        <h3 id="windows-10">Windows 10</h3>
+<p>The VPN client built into Windows 10 doesn't work with L2TP/IPSEC VPN servers behind NAT.  Need to change a registry key to get this work.</p>
+<p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent</p>
+<ul>
+<li>0 : No ability to establish connection behind NAT</li>
+<li>1 : Servers behind NAT</li>
+<li>2 : Server and client behind NAT</li>
+</ul>
+<p>Need to restart after making a change</p>
+<p>On Windows 10 there seems to be a 2 phase process to get this work.  First set the value to 1 reboot and then update to 2.</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/help/926179/how-to-configure-an-l2tp-ipsec-server-behind-a-nat-t-device-in-windows-vista-and-in-windows-server-2008">Knowlege base article</a></li>
+<li><a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/l2tp-registry-change-to-work-with-nat-t-not/f864ba86-a01b-42b5-93cd-e70c5fdf4fb3">Forum for Windows 10</a></li>
 </ul>
 
         </div>
