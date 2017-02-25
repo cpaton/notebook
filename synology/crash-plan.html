@@ -149,7 +149,7 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h3>CrashPlan</h3>
+            <h1>CrashPlan</h1>
             <hr />
         <p>CrashPlan consists of two parts, a server and a client that connects to the server for configuration and monitoring. On a NAS device you install just the server in what is called headless mode. Follow the instructions from</p>
 <ul>
@@ -170,14 +170,14 @@
 <li><a href="https://github.com/JrCs/docker-crashplan">https://github.com/JrCs/docker-crashplan</a></li>
 </ul>
 <p>Not been able to get it working yet.  Container starts and able to connect from windows client but not able to successfully enter the credentials.  Client is reporting the error CPC_UNAVILABLE</p>
-<h3 id="windows-client">Windows Client</h3>
+<h1 id="windows-client">Windows Client</h1>
 <p>Two items need to be configured to use the windows client to connect to the Synology daemon</p>
 <ul>
 <li><strong>C:\Program Files\CrashPlan\conf\ui.properties</strong> need to update serviceHost to the IP address of the Synology</li>
 <li>Copy the file <strong>/var/lib/crashplan/.ui_info</strong> from the Synology to <strong>C:\ProgramData\CrashPlan\.ui_info</strong> (this file includes a port number and a GUID). The last part is the IP address of the Synology device this should be updated</li>
 </ul>
-<h3 id="fails-to-start">Fails to start</h3>
-<h4 id="installing-upgrade-then-stops-4.7.0">Installing upgrade then stops &gt;= 4.7.0</h4>
+<h1 id="fails-to-start">Fails to start</h1>
+<h2 id="installing-upgrade-then-stops-4.7.0">Installing upgrade then stops &gt;= 4.7.0</h2>
 <pre>
 I 10/01/16 11:05AM CrashPlan started, version 4.7.0, GUID 674279968953860117
 I 10/01/16 11:05AM Downloading a new version of CrashPlan.
@@ -196,7 +196,7 @@ rm upgrade.cpi
 <p>Should be able to start the service now</p>
 <p>The comments of this (blog post)[https://pcloadletter.co.uk/2012/01/30/crashplan-syno-package/comment-page-42/#comments] seem to get updated as new problems are hit with versions</p>
 <p>This (post)[https://crashplan.setepontos.com/crashplan-4-7-0-installation/] specifically talks about v4.7.0</p>
-<h4 id="repairing-upgrade-4.7.0">Repairing upgrade &lt;4.7.0</h4>
+<h2 id="repairing-upgrade-4.7.0">Repairing upgrade &lt;4.7.0</h2>
 <p>CrashPlan package fails to start on the synology. Viewing the log file from within the package manager shows something like</p>
 <pre>
 I 05/14/15 08:19PM Upgrades available at central.crashplan.com:443
@@ -237,7 +237,7 @@ mv upgrade.sh upgrade.sh.old
 <p>Should now be able to start the package again from the package manager</p>
 <pre><code class="language-bash">tail -f /var/packages/CrashPlan/target/log/history.log.0
 </code></pre>
-<h4 id="starts-then-stops-immediately">Starts then stops immediately</h4>
+<h2 id="starts-then-stops-immediately">Starts then stops immediately</h2>
 <p>Viewing the log from the package manager shows that the service starts and then stops immediately not reporting any more information</p>
 <pre>
 I 01/04/16 08:17PM CrashPlan started, version 4.5.0, GUID 674279968953860117
