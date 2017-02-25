@@ -45,8 +45,14 @@ h3, h4, h5 {
 .dropdown-submenu:hover>a:after{border-left-color:#555;}
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
+/* Colours to look better with the darkly bootstrap theme */
 nav[data-toggle=toc] .nav>li>a:focus, nav[data-toggle=toc] .nav>li>a:hover, nav[data-toggle=toc] .nav>.active>a {
   color: #d33682;
   border-left: 1px solid #d33682;
+}
+
+pre {
+  background-color: #474949; /* highlight.js background */
+  color: #d1d9e1; /* hihglight.js color */
 }
 
