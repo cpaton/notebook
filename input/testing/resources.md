@@ -6,7 +6,7 @@ title: Resources
 
 ## Test automation without a headache: Five key patterns
 
-[![Test Patterns](images/Test automation without a headache_ Five key patterns - Gojko Adzic on Vimeo.png)](https://vimeo.com/154289460 "Test automation without a headache: Five key patterns - Gojko Adzic")
+![Test Patterns](https://vimeo.com/154289460)
 
 **Synopsis**
 
@@ -23,7 +23,7 @@ Patterns for test automation that provide value of time and don't slow down a pr
 
 ## Testing with No Harm
 
-[![Testing with no harm](images/Testing with No Harm - Enrico Campidoglio on Vimeo.png)](https://vimeo.com/154312751 "Testing with No Harm - Enrico Campidoglio")
+![Testing with no harm](https://vimeo.com/154312751)
 
 **Synopsis**
 

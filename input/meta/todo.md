@@ -3,7 +3,6 @@ title : Todo
 page_display_sort_order: 1
 ---
 
-* Testing resources - vimeo links - can we now use embeded html - or potential replacement in config wyam
 * Markdown docs
 * ReStructured text?
 * Local docker file taken from Jekyll

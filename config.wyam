@@ -30,7 +30,7 @@ Pipelines.Add("PageTree",
 
 Pipelines.Add("RenderPages",
     Documents("Pages"),
-    Markdown(),
+    Markdown().UseExtensions(),
     Replace("site.asset-base-url", Settings["site.asset-base-url"]),
     Razor().WithLayout("/shared/_page.cshtml"),
     WriteFiles()
