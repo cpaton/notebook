@@ -6,6 +6,9 @@
 <script src="@Model["site.base-url"]/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="@Model["site.base-url"]/css//bootstrap-toc.min.css">
+<script src="@Model["site.base-url"]/js/bootstrap-toc.min.js"></script>
+
 <script lang="javascript">
 (function($){
     $(document).ready(function(){
@@ -18,3 +21,11 @@
     });
 })(jQuery);
 </script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 110
+})
+</script>
+
+<script src="@Model["site.base-url"]/js/anchor-fix.js"></script>

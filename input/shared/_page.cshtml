@@ -1,18 +1,17 @@
-@{
-    Layout = "_default";
-}
+@{ Layout = "_default"; }
 
-<article class="post">
-    
-    @if (!string.IsNullOrEmpty(Model.Get("title", "")))
-    {
-    <div class="page-header">
-        <h3>@Model["title"]</h3>
-    </div>
-    }
+<div class="container">
 
-    <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+        @if (!string.IsNullOrEmpty(Model.Get("title", ""))) {
+            <h3>@Model["title"]</h3>
+            <hr />
+        }
         @RenderBody()
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
     </div>
-
-</article>
+</div>

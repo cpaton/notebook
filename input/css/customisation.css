@@ -3,6 +3,8 @@ html {
   min-height: 100%;
 }
 body {
+  /* To cope with the fixed navbar at the top */
+  margin-top: 110px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font: 16px;
@@ -21,6 +23,8 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
+
 
 .marginBottom-0 {margin-bottom:0;}
 
