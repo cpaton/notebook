@@ -2,7 +2,7 @@
 title: Cheat Sheet
 ---
 
-### Ctrl+C support
+# Ctrl+C support
 
 need to add -t -i to support sending ctrl+c to process within powershell
 
@@ -10,7 +10,7 @@ need to add -t -i to support sending ctrl+c to process within powershell
 docker run -v '/c/_cp/Git/notebook.wiki:/wiki' -p 80:80 -t -i notebook-gollum
 ```
 
-### Configuring PowerShell
+# Configuring PowerShell
 
 Need to start the docker machine (host for containers)
 
@@ -26,7 +26,7 @@ docker-machine env default --shell powershell | invoke-expression
 
 should then be able to use the docker command line tool e.g. docker images
 
-### IP of the machine
+# IP of the machine
 
 ``` bash
 docker-machine ip defaulta

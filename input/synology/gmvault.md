@@ -39,7 +39,7 @@ Hit enter when it says it will open a browser, this will fail but a link will be
 
 After that you should be good to go ahead with the backups
 
-### Sample script
+# Sample script
 
 ``` bash
 #!/bin/sh
@@ -75,7 +75,7 @@ cd /volume1/Data/Backup/GMail/GMVault/gmvault_env/bin
 ./pip install -U gmvault
 ```
 
-**References**
+# References
 
 * [http://workingconcept.com/blog/synology-gmail-backup](http://workingconcept.com/blog/synology-gmail-backup)
 * [http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/](http://jimmybonney.com/articles/install_gmvault_on_a_synology_nas_follow_up/)

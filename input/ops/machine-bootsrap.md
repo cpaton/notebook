@@ -2,7 +2,7 @@
 title: Machine Bootstrap
 ---
 
-### Boxstarer
+## Boxstarer
 
 Boxstarter provides a way to easily bootstrap a machine by installing packages from chocolately plus it provides utility functions for configuring windows. It supports starting from nothing via visiting a URL which accepts a path to a configuration script that is publicly accessbile e.g. GitHub gist. This URL uses a Click Once installer to install Boxstarter and then run the script. Initial trials with this approach weren't ideal
 
