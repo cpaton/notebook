@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SSH</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/synology/ssh.html" />
+    <title>Publising Modules</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/powershell/publishing-modules.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -167,29 +167,9 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>SSH</h1>
+            <h1>Publising Modules</h1>
             <hr />
-        <p>Enable the SSH service ( Control Panel -&gt; Terminal &amp; SNMP )</p>
-<p>Generate a public/private key pair using ssh-keygen</p>
-<p>Setup the users home directory for SSH keys by logging on as root</p>
-<pre><code class="language-bash">cd /var/services/homes
-chmod 755 User
-cd User
-mkdir .ssh
-cat &lt;path to public key&gt; &gt;&gt; .ssh/authorized_keys
-chown User .ssh
-chown User .ssh/authorized_keys
-chmod 700 .ssh
-chmod 644 .ssh/authorized_keys
-cd ..
-</code></pre>
-<p>Now convert the private key to a putty supported key using puttygen.</p>
-<p><strong>References</strong></p>
-<ul>
-<li><a href="http://techanic.net/2014/04/12/configuring_ssh_and_scp_sftp_on_dsm_5.0_for_synology_diskstations.html">http://techanic.net/2014/04/12/configuring_ssh_and_scp_sftp_on_dsm_5.0_for_synology_diskstations.html</a></li>
-</ul>
-<p>You should now be able to connect using Putty to the NAS without using a password</p>
-
+        
         </div>
         <div class="col-md-3">
             <nav id="toc" data-toggle="toc" data-spy="affix"></nav>

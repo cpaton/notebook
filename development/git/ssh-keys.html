@@ -47,6 +47,16 @@
                             </ul>
                             <!-- NavBarMenu Start --> 
                             </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">powershell</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/powershell/dynamic-functions.md">Dynamic Functions</a></li>
+                            <li class=""><a href="/development/powershell/passwords.html">Passwords</a></li>
+                            <li class=""><a href="/development/powershell/publishing-modules.md">Publising Modules</a></li>
+                            <li class=""><a href="/development/powershell/updating-modules.html">Updating Modules</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
                             <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">testing</a>
                                                         <!-- NavBarMenu Start -->
                             <ul class="dropdown-menu">
@@ -162,11 +172,11 @@
         <p>Can do this via a one-liner in powershell e.g. to create a key called github</p>
 <pre><code class="language-powershell">&amp; 'C:\Program Files (x86)\Git\bin\sh.exe' --login -i -c 'ssh-keygen -t rsa -b 4096 -C &quot;&quot;EMAIL_ADDRESS&quot;&quot; -f ~/.ssh/github -N &quot;&quot;&quot;&quot;'
 </code></pre>
-<p>Alternatively from a GIT bash prompt and run the following</p>
+<p>Alternatively from a GIT bash prompt run the following</p>
 <pre><code class="language-shell">ssh-keygen -t rsa -b 4096 -C &quot;your_email&#64;example.com&quot;
 </code></pre>
-<p>Accept the default location for the key for now. After it has complete rename the key found in %USERPROFILE%.ssh to the name of the git host e.g. github or bitbucket. Need to do this for both the private and public key parts. Then use the instructions below to setup an ssh config file to get it to pick the correct git depending on the remote host.</p>
-<p>Add the public key to the git host via their website or other means. Now you can test connectivity e.g.</p>
+<p>Accept the default location for the key for now. After the key is generated rename the key found in %USERPROFILE%.ssh to the name of the git host e.g. github or bitbucket for both the private and public key parts. Use these <a href="ssh-key-per-host.html">instructions</a> to setup an ssh config file to get it to pick the correct key depending on the remote host.</p>
+<p>Add the public key to the git host via their website or other means. Test connectivity by</p>
 <pre><code class="language-shell">ssh -T -v git&#64;bitbucket.org
 </code></pre>
 
