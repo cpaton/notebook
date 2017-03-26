@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resources</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/resources.html" />
+    <title>Network Speed</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/network-speed.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -168,12 +168,86 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Resources</h1>
+            <h1>Network Speed</h1>
             <hr />
-        <ul>
-<li><a href="http://notebook-assets.craigpaton.uk/notebook/The%20Release%20Pipeline%20Model.pdf">Release Pipeline Model Whitepaper</a></li>
-<li><a href="http://stevenmurawski.com/devops-reading-list/">Steven Murawski Dev Ops reading list</a></li>
-</ul>
+        <p><a href="https://iperf.fr/">iPerf</a> used to test the network speed.  It needs two computers one to act as the server and the other as a client.  Its very simple to get some results.  On the server run</p>
+<pre><code class="language-powershell">.\iperf3.exe --server --verbose --version4 --format M
+</code></pre>
+<p>On the client run</p>
+<pre><code class="language-powershell">.\iperf3.exe --client SERVER_MACHINE_IP --verbose --version4 --format M --port 5201
+</code></pre>
+<h1 id="hardware">Hardware</h1>
+<p>Lenovo W520 used as the server connected directly to Netgear N600 router via a wired connection speed reported as 1Gb</p>
+<p>Lenonvo Carbon X1 used as the client.  This has a gigabit ethernet card and an Intel Dual Band Wireless-N 7260 which supports both 2.4 and 5Ghz bands and 802.11a/b/g/n protocols.</p>
+<p>Netgear N600 DGND3700 router that has a gigabit switch and supports 2.4 and 5GHz Wifi networks.</p>
+<p>TP-LINK 500 Mbps used as the Powerline adapters (TL-PA511KIT)</p>
+<h1 id="results">Results</h1>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th style="text-align: center;">Avg Speed (MByte/sec)</th>
+<th>Comments / Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wired connection (1Gb)</td>
+<td style="text-align: center;">100</td>
+<td></td>
+</tr>
+<tr>
+<td>Wired connection (100Mb)</td>
+<td style="text-align: center;">11.3</td>
+<td>Netgear switch restricts connection even though it supports gigabit</td>
+</tr>
+<tr>
+<td>Wifi 5GHz Same Room</td>
+<td style="text-align: center;">1.8</td>
+<td>This is supiciously slow, in theory should be ~30</td>
+</tr>
+<tr>
+<td>Wifi 2.4GHz Same Room</td>
+<td style="text-align: center;">7.7</td>
+<td></td>
+</tr>
+<tr>
+<td>Wifi 2.4GHz Same Room (5Ghz off)</td>
+<td style="text-align: center;">8.8</td>
+<td>Not sure why 5Ghz on would cause a difference</td>
+</tr>
+<tr>
+<td>Wifi 2.4GHz Floor above</td>
+<td style="text-align: center;">6.5</td>
+<td></td>
+</tr>
+<tr>
+<td>Wifi 2.4GHz Floor below</td>
+<td style="text-align: center;">4.0</td>
+<td></td>
+</tr>
+<tr>
+<td>PowerLine Same Floor</td>
+<td style="text-align: center;">14.2</td>
+<td></td>
+</tr>
+<tr>
+<td>PowerLine Floor Above</td>
+<td style="text-align: center;">8.9</td>
+<td></td>
+</tr>
+<tr>
+<td>PowerLine Floor Below</td>
+<td style="text-align: center;">8.5</td>
+<td></td>
+</tr>
+<tr>
+<td>PowerLine Floor Below (Switch)</td>
+<td style="text-align: center;">8.4</td>
+<td>Additional switch between client and powerline, makes no difference as expected</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <div class="col-md-3">
