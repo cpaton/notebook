@@ -28,3 +28,12 @@ $('body').scrollspy({
 </script>
 
 <script src="@Model["site.base-url"]/js/anchor-fix.js"></script>
+
+<!-- style all markdown tables -->
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('table').addClass("table table-bordered table-hover")
+    });
+})(jQuery);
+</script>
