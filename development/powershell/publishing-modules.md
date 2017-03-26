@@ -225,7 +225,7 @@ $('body').scrollspy({
 </script>
 
 <!-- show horizontal scrollbar for code blocks instead of wrapping -->
-<script lang="javascript">
+<!--<script lang="javascript">
 (function($){
     $(document).ready(function(){
         $('pre code').css({ 
@@ -234,5 +234,5 @@ $('body').scrollspy({
         })
     });
 })(jQuery);
-</script>
+</script>-->
 </html>
