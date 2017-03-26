@@ -37,3 +37,15 @@ $('body').scrollspy({
     });
 })(jQuery);
 </script>
+
+<!-- show horizontal scrollbar for code blocks instead of wrapping -->
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('pre code').css({ 
+            "overflow-x": "auto",
+            "white-space": "pre"
+        })
+    });
+})(jQuery);
+</script>
