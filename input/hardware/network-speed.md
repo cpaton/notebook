@@ -44,6 +44,16 @@ Lenonvo Carbon X1 with an Intel Dual Band Wireless-N 7260 which supports both 2.
 
 ## Powerline
 
+TP-LINK AV2000 Mbps (TL-PA9020P)
+
+| Scenario | Avg Speed (MByte/sec) | Comments / Observations |
+|---|:-:|---|
+| PowerLine Same Floor | 21.3 | |
+| PowerLine Floor Above | 17.9 | Much better performance over longer distances to previous models |
+| PowerLine Floor Below | 15.8 | |
+| PowerLine Floor Below (Switch) | 15.8 | Additional switch between client and powerline, makes no difference as expected |
+
+
 TP-LINK 500 Mbps used as the Powerline adapters (TL-PA511KIT)
 
 | Scenario | Avg Speed (MByte/sec) | Comments / Observations |
