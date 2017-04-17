@@ -32,7 +32,7 @@ Lenonvo Carbon X1 with a gigabit ethernet
 
 ## Wifi
 
-Lenonvo Carbon X1 with an Intel Dual Band Wireless-N 7260 which supports both 2.4 and 5Ghz bands and 802.11a/b/g/n protocols.
+Lenonvo Carbon X1 with an (Intel Dual Band Wireless-N 7260)[http://ark.intel.com/products/75440/Intel-Dual-Band-Wireless-N-7260] which supports both 2.4 and 5Ghz bands and 802.11a/b/g/n protocols theoretical speed limit of 37.5MBps (300 Mbps)
 
 | Scenario | Avg Speed (MByte/sec) | Comments / Observations |
 |---|:-:|---|
