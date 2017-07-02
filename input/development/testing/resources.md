@@ -40,4 +40,7 @@ We have to change our applications to make them testable, in doing so we can cau
 **References**
 
 * [DHH Test Induced Design Damage](http://david.heinemeierhansson.com/2014/test-induced-design-damage.html)
+
+# Links
+
 * [Is TDD dead?](https://martinfowler.com/articles/is-tdd-dead/)
