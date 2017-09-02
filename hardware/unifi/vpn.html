@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SD Cards</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/raspberry-pi/sd-cards.html" />
+    <title>VPN</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/hardware/unifi/vpn.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -189,11 +189,10 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>SD Cards</h1>
+            <h1>VPN</h1>
             <hr />
-        <p>Model B had an SD card slot. Model B+ and Raspberry Pi 2 moved to a Micro SD card.</p>
-<p>Suggestion is to use sizes 32GB or less, as the standards say that SD cards of size more than 32GB should be formatted as exFAT. This scheme is not supported by the Raspberry Pi and hence won't boot <a href="http://www.raspberrypi.org/forums/viewtopic.php?f=91&amp;t=83220&amp;p=588601#p588601">(http://www.raspberrypi.org/forums/viewtopic.php?f=91&amp;t=83220&amp;p=588601#p588601)</a></p>
-<p>SD card speeds are split into categories. When prefixed with class the number relates to MB/s e.g. class 3 is slower than class 5. Higher speeds have dropped the class prefix and are known as UHS - <a href="https://www.sdcard.org/developers/overview/speed_class/">https://www.sdcard.org/developers/overview/speed_class/</a></p>
+        <h3 id="windows-10">Windows 10</h3>
+<p>After configuring the VPN connection in Windows you need to make some additional changes not exposed through the main GUI.  From within network connections (ncpa.cpl) find the VPN connection and edit it.  On the security tab select Allow These Protocols and check Microsoft CHAP Version 2 (MS-CHAP v2).  Not been able to get VPN connection to work from inside the Unifi network - had to perform tests via the Mobile personal hotspot.</p>
 
         </div>
         <div class="col-md-3">
