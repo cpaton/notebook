@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Docker On Windows</title>
-    <link rel="canonical" href="http://notebook.craigpaton.uk/ops/docker/on-windows.html" />
+    <title>DevOps</title>
+    <link rel="canonical" href="http://notebook.craigpaton.uk/development/process/dev-ops.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -197,23 +197,19 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Docker On Windows</h1>
+            <h1>DevOps</h1>
             <hr />
-        <p>Docker quickstart terminal installed with Docker for windows runs</p>
-<pre><code class="language-powershell">&quot;C:\Program Files\Git\bin\bash.exe&quot; --login -i &quot;C:\Program Files\Docker Toolbox\start.sh&quot;
-</code></pre>
-<p>This script creates a VirtualBox machine if one doesn't already exist and then uses <code>docker-machine</code> to start it and then reads configuration information from that machine using <code>docker-machine env default</code> to setup shell variables</p>
-<p>To do the equivalent for PowerShell use the following</p>
-<pre><code class="language-powershell"># Make sure docker host is running
-if ( ( docker-machine status default ) -ne &quot;Running&quot; ) {
-    docker-machine start default
-    &quot;yes&quot; | docker-machine regenerate-certs default
-}
-
-# Get machine information and setup the environment so that we can use the docker tool
-docker-machine env default --shell powershell | Invoke-Expression
-Write-Host ( &quot;Docker machine IP address is {0}&quot; -f ( docker-machine ip default ) )
-</code></pre>
+        <h1 id="bookshelf">Bookshelf</h1>
+<h2 id="devops-handbook">DevOps Handbook</h2>
+<p><img src="http://notebook-assets.craigpaton.uk/notebook/devops-handbook-cover.jpg" alt="DevOps Handbook" /></p>
+<p>DevOps Handbook: How To Create World-Class Agiligy, Reliability &amp; Security Within Technology Organistations
+(Gene Kim, Jez Humble, Patrick Debois, John Willis)</p>
+<ul>
+<li>Chapter 6 - understanding the work in our value stream.  Reason for creating a dedicated transformation team not burdened by normal day to day activity. p66</li>
+</ul>
+<blockquote>
+<p>An organisation that has been successful for an extended period of time has created mechanisms to perpetuate the practices that made them successful ... Many techniques are used to perpetuate and protect how current processes work ... In particular bureaucracies are incredibly resilient and are designed to survive adverse conditions ... While this is good for preserving the status quo, often we need to how we work to adapt to changing conditions in the marketplace.</p>
+</blockquote>
 
         </div>
         <div class="col-md-3">

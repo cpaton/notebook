@@ -7,7 +7,6 @@ body {
   margin-top: 55px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
@@ -18,6 +17,10 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #073642;
+}
+
+blockquote {
+  font-size: 14px;
 }
 
 .container .text-muted {
