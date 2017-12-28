@@ -2,7 +2,7 @@
 
 Settings["site.url"] = "http://notebook.craigpaton.uk";
 Settings["site.base-url"] = "";
-Settings["site.asset-base-url"] = "http://notebook-assets.craigpaton.uk/notebook";
+Settings["site.asset-base-url"] = "https://notebook-cdn.craigpaton.uk/notebook";
 Settings["site.title"] = "Notebook";
 Settings["site.description"] = "Programmers notebook";
 
