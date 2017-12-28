@@ -66,6 +66,6 @@ Pipelines.Add("Resources",
 );    
 
 Pipelines.Add("GitHubPages",
-    //CopyFiles("CNAME"),
+    CopyFiles("CNAME"),
     CopyFiles(".nojekyll")
 );
