@@ -1,5 +1,5 @@
 ---
-title: ToC
+title: Theory of Constraints
 ---
 
 # Bookshelf
