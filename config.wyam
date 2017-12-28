@@ -2,7 +2,7 @@
 #n Wyam.Yaml
 #n Wyam.Markdown
 
-Settings["site.url"] = "http://notebook.craigpaton.uk";
+Settings["site.url"] = "https://notebook.craigpaton.uk";
 Settings["site.base-url"] = "";
 Settings["site.asset-base-url"] = "https://notebook-cdn.craigpaton.uk/notebook";
 Settings["site.title"] = "Notebook";
