@@ -1,4 +1,6 @@
-#n -p Wyam.All
+#n Wyam.Razor
+#n Wyam.Yaml
+#n Wyam.Markdown
 
 Settings["site.url"] = "http://notebook.craigpaton.uk";
 Settings["site.base-url"] = "";
