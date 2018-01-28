@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VPN</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/hardware/synology/vpn.html" />
+    <title>DDD</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/development/architecture/DDD.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -207,22 +207,12 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>VPN</h1>
+            <h1>DDD</h1>
             <hr />
-        <h3 id="windows-10">Windows 10</h3>
-<p>The VPN client built into Windows 10 doesn't work with L2TP/IPSEC VPN servers behind NAT.  Need to change a registry key to get this work.</p>
-<p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent</p>
-<ul>
-<li>0 : No ability to establish connection behind NAT</li>
-<li>1 : Servers behind NAT</li>
-<li>2 : Server and client behind NAT</li>
-</ul>
-<p>Need to restart after making a change</p>
-<p>On Windows 10 there seems to be a 2 phase process to get this work.  First set the value to 1 reboot and then update to 2.</p>
-<ul>
-<li><a href="https://support.microsoft.com/en-us/help/926179/how-to-configure-an-l2tp-ipsec-server-behind-a-nat-t-device-in-windows-vista-and-in-windows-server-2008">Knowlege base article</a></li>
-<li><a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/l2tp-registry-change-to-work-with-nat-t-not/f864ba86-a01b-42b5-93cd-e70c5fdf4fb3">Forum for Windows 10</a></li>
-</ul>
+        <h1 id="videos">Videos</h1>
+<h2 id="domain-modeling-made-functional-scott-wlaschin">Domain Modeling Made Functional - Scott Wlaschin</h2>
+<p><iframe src="https://player.vimeo.com/video/239722972" width="500" height="281" frameborder="0" allowfullscreen></iframe></p>
+<p>Good example of how the type system within F# can be used to make better domin models.</p>
 
         </div>
         <div class="col-md-3">
