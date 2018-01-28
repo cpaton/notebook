@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Docker On Windows</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/ops/docker/on-windows.html" />
+    <title>Blockchain</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/misc/blockchain.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -208,23 +208,13 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Docker On Windows</h1>
+            <h1>Blockchain</h1>
             <hr />
-        <p>Docker quickstart terminal installed with Docker for windows runs</p>
-<pre><code class="language-powershell">&quot;C:\Program Files\Git\bin\bash.exe&quot; --login -i &quot;C:\Program Files\Docker Toolbox\start.sh&quot;
-</code></pre>
-<p>This script creates a VirtualBox machine if one doesn't already exist and then uses <code>docker-machine</code> to start it and then reads configuration information from that machine using <code>docker-machine env default</code> to setup shell variables</p>
-<p>To do the equivalent for PowerShell use the following</p>
-<pre><code class="language-powershell"># Make sure docker host is running
-if ( ( docker-machine status default ) -ne &quot;Running&quot; ) {
-    docker-machine start default
-    &quot;yes&quot; | docker-machine regenerate-certs default
-}
-
-# Get machine information and setup the environment so that we can use the docker tool
-docker-machine env default --shell powershell | Invoke-Expression
-Write-Host ( &quot;Docker machine IP address is {0}&quot; -f ( docker-machine ip default ) )
-</code></pre>
+        <p>Couple of good videos from Channel 9.  First provides a good basic overview of transactions and blocks within the blockchain.  The second is an overview of the Trusted Execution Environment (TEE) that MicroSoft is developing within Azure to run blockchains across companies</p>
+<p>An Introduction to Blockchain with Mark Russinovich</p>
+<iframe src="https://channel9.msdn.com/Blogs/Seth-Juarez/An-Introduction-to-Blockchain-with-Mark-Russinovich/player" width="560" height="315" allowFullScreen frameBorder="0"></iframe>
+<p>Inside Coco Framework, the Foundation of Blockchain for Enterprise with Mark Russinovich</p>
+<iframe src="https://channel9.msdn.com/Blogs/Seth-Juarez/Inside-Coco-Framework-the-Foundation-of-Blockchain-for-Enterprise-with-Mark-Russinovich/player" width="560" height="315" allowFullScreen frameBorder="0"></iframe>
 
         </div>
         <div class="col-md-3">
