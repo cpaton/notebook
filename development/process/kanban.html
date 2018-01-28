@@ -45,13 +45,15 @@
                                                         <!-- NavBarMenu Start -->
                             <ul class="dropdown-menu">
                             <li class=""><a href="/development/computer-science/compilers-and-interpreters.html">Compilers &amp; Interpreters</a></li>
+                            <li class=""><a href="/development/computer-science/os.html">OS</a></li>
                             </ul>
                             <!-- NavBarMenu Start --> 
                             </li>   
-                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">fsharp</a>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">dotnet</a>
                                                         <!-- NavBarMenu Start -->
                             <ul class="dropdown-menu">
-                            <li class=""><a href="/development/fsharp/resources.html">Resources</a></li>
+                            <li class=""><a href="/development/dotnet/fsharp.html">F#</a></li>
+                            <li class=""><a href="/development/dotnet/gc.html">GC</a></li>
                             </ul>
                             <!-- NavBarMenu Start --> 
                             </li>   
@@ -102,6 +104,7 @@
                                                         <!-- NavBarMenu Start -->
                             <ul class="dropdown-menu">
                             <li class=""><a href="/development/web/angular.html">Angular 2</a></li>
+                            <li class=""><a href="/development/web/css.html">CSS</a></li>
                             <li class=""><a href="/development/web/npm.html">NPM</a></li>
                             <li class=""><a href="/development/web/resources.html">Resources</a></li>
                             </ul>
@@ -210,7 +213,14 @@
         <div class="col-md-9">
             <h1>Kanban</h1>
             <hr />
-        <h1 id="bookshelf">Bookshelf</h1>
+        <h1 id="questions">Questions</h1>
+<ul>
+<li>Where does estimation fit into kanabn?</li>
+<li>Big source of variability would be ticket size.  Assume you would want to bring in tickets of similar size how do you achieve that?  At what point do you break larger tickets into smaller tickets of the same size</li>
+<li>How do you handle regression testing?</li>
+<li>How do you decide on your wip limits per column?</li>
+</ul>
+<h1 id="bookshelf">Bookshelf</h1>
 <h2 id="kanaban-successful-evolutionary-change-for-your-technology-business">Kanaban - Successful evolutionary change for your technology business</h2>
 <p><img src="https://notebook-cdn.craigpaton.uk/notebook/Kanaban-Successful-evolutionary-change-for-your-technology-business-cover.jpg" alt="Kanaban - Successful evolutionary change for your technology business" /></p>
 <p>Kanaban - Successful evolutionary change for your technology business
@@ -236,7 +246,55 @@
 <li>Attack sources of variability to improve predictability - more advanced topic and should be tackled after the above 5</li>
 </ol>
 </li>
+<li>Chapter 6 - how to construct the kanban board along with examples for more complex workflows and swimlanes for different work types.</li>
+<li>Chapter 8 - Release frequency
+<ul>
+<li>Short time boxed iterations of Agile can lead to dysfunctional teams</li>
+<li>Kanabn decouples prioritisation, development and delivery</li>
+<li>Releasing has a cost, that needs to be balanced with the value gained</li>
 </ul>
+</li>
+<li>Chapter 9 - Priotisation frequency
+<ul>
+<li>Have an input queue with a set size</li>
+<li>Regular priorisation meetings to fill empty gaps in queue</li>
+<li>As queue is small meeting should be quick</li>
+<li>Estimation of items in backlog has a cost that needs to be balanced and may not be needed</li>
+</ul>
+</li>
+<li>Chapter 10 - WIP limits
+<ul>
+<li>WIP limits are required</li>
+<li>Don't set WIP limits too low - likely to find lots of impediments to flow initially</li>
+<li>WIP limit per column/work centre should generally be set by average nummer of items per person</li>
+<li>Bottleneck needs a buffer in front of them (but should be small)</li>
+<li>Set a WIP limit and monitor it overtime</li>
+<li>Input queue size should be slightly larger than the average items completed in the regular timeframe of priortisation</li>
+</ul>
+</li>
+<li>Chapter 11 - Classes of service
+<ul>
+<li>Swimlane per class of service e.g. bug, work item, epedite (production defect), tech improvement</li>
+</ul>
+</li>
+<li>Chapter 12 - Metrics
+<ul>
+<li>Cumulative flow diagram - should be smooth</li>
+<li>Lead time (item count by days)</li>
+<li>Throughput (items or story points per time period)</li>
+<li>Flow efficiency (total time v value added time)</li>
+</ul>
+</li>
+<li>Chapter 13 - Real world projects
+<ul>
+<li>Core priniciples of kanban apply - wip limits, prioritisation cadence, delivery cadence and classes of service</li>
+<li>May track epics and stories on single kanban board</li>
+<li>Typically won't go down to the level of a task</li>
+</ul>
+</li>
+</ul>
+<h2 id="lean-primer">Lean primer</h2>
+<p><a href="http://www.leanprimer.com/wiki/index.php?title=Main_Page">Lean Primer - Craig Larman &amp; Bas Vodde</a></p>
 
         </div>
         <div class="col-md-3">
