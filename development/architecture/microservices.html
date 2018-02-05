@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Publising Modules</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/development/powershell/publishing-modules.html" />
+    <title>Microservices</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/development/architecture/microservices.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -212,9 +212,11 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Publising Modules</h1>
+            <h1>Microservices</h1>
             <hr />
-        <p>How to work with PackageManagement module in PowerShell to publish</p>
+        <h1 id="data-dichotomy">Data Dichotomy</h1>
+<p>Interesting article by Ben Stopford describing the problem of data management within a microservices architecture.  Services want to encapsulate data, but other services need access to slice and dice that data as needed.  In the article he describes an architecture which uses immutable streams of data accessbile to any service.  A single service is responsible for adding to/mutating the stream</p>
+<p><a href="https://www.confluent.io/blog/data-dichotomy-rethinking-the-way-we-treat-data-and-services/">The Data Dichotomy: Rethinking the Way We Treat Data and Services</a></p>
 
         </div>
         <div class="col-md-3">
