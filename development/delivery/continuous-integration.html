@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SSH Key Generation</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/development/git/ssh-keys.html" />
+    <title>CI</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/development/delivery/continuous-integration.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -219,18 +219,29 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>SSH Key Generation</h1>
+            <h1>CI</h1>
             <hr />
-        <p>Can do this via a one-liner in powershell e.g. to create a key called github</p>
-<pre><code class="language-powershell">&amp; 'C:\Program Files (x86)\Git\bin\sh.exe' --login -i -c 'ssh-keygen -t rsa -b 4096 -C &quot;&quot;EMAIL_ADDRESS&quot;&quot; -f ~/.ssh/github -N &quot;&quot;&quot;&quot;'
-</code></pre>
-<p>Alternatively from a GIT bash prompt run the following</p>
-<pre><code class="language-shell">ssh-keygen -t rsa -b 4096 -C &quot;your_email&#64;example.com&quot;
-</code></pre>
-<p>Accept the default location for the key for now. After the key is generated rename the key found in %USERPROFILE%.ssh to the name of the git host e.g. github or bitbucket for both the private and public key parts. Use these <a href="ssh-key-per-host.html">instructions</a> to setup an ssh config file to get it to pick the correct key depending on the remote host.</p>
-<p>Add the public key to the git host via their website or other means. Test connectivity by</p>
-<pre><code class="language-shell">ssh -T -v git&#64;bitbucket.org
-</code></pre>
+        <h1 id="riot-games">Riot Games</h1>
+<p>Build engineers from Riot Games posted a series of posts describing their continuous delivery setup with containers.</p>
+<ul>
+<li><a href="https://engineering.riotgames.com/news/thinking-inside-container">Part I: Thinking Inside the Container</a></li>
+<li><a href="http://engineering.riotgames.com/news/putting-jenkins-docker-container">Part II: Putting Jenkins in a Docker Container</a></li>
+<li><a href="http://engineering.riotgames.com/news/docker-jenkins-data-persists">Part III: Docker &amp; Jenkins: Data That Persists</a></li>
+<li><a href="http://engineering.riotgames.com/news/jenkins-docker-proxies-and-compose">Part IV: Jenkins, Docker, Proxies, and Compose</a></li>
+<li><a href="http://engineering.riotgames.com/news/taking-control-your-docker-image">Part V: Taking Control of Your Docker Image</a></li>
+<li><a href="http://engineering.riotgames.com/news/building-jenkins-inside-ephemeral-docker-container">Part VI: Building with Jenkins Inside an Ephemeral Docker Container</a></li>
+<li><a href="http://engineering.riotgames.com/news/jenkins-ephemeral-docker-tutorial">Part VII: Tutorial: Building with Jenkins Inside an Ephemeral Docker Container</a></li>
+<li><a href="http://engineering.riotgames.com/news/thinking-inside-container-dockercon-talk-and-story-so-far">Part VIII: DockerCon Talk and the Story So Far</a></li>
+</ul>
+<p>Part I lists their principles which underpin the setup</p>
+<blockquote>
+<ul>
+<li>We believe that engineering teams have to be able to totally own their technology stacks, down to administrative level control of their build environments.</li>
+<li>We believe in Configuration as Code. Teams should maintain their build pipeline and environment in source control whenever possible.</li>
+<li>We believe that every time an engineer performs a build, they need to build a shippable version of their software in all deployable configurations.  A “build” is not a code compile; it’s the entire set of deployable artifacts.</li>
+<li>We believe that shipping is a product decision. Product teams need to be able to deploy and see the latest shippable version at the push of a button.</li>
+</ul>
+</blockquote>
 
         </div>
         <div class="col-md-3">
