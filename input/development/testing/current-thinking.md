@@ -24,7 +24,7 @@ This style of testing has evolved over a few years and continues to evolve.  Her
 
 # Sample
 
-I have not tried tools like SpecFlow in a significant way and believe they could be useful to suppor this style of testing.  Typical pattern is to create a mini framework on top of the unit test library already in use e.g. NUnit.
+I have not tried tools like SpecFlow in a significant way and believe they could be useful to support this style of testing.  Typical pattern is to create a mini framework on top of the unit test library already in use e.g. NUnit.
 
 Sample base class
 
