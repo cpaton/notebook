@@ -1,0 +1,1 @@
+docker build --tag capaton/notebook --file Dockerfile .
