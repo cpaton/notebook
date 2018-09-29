@@ -20,7 +20,5 @@ steps:
     targetType: inline
     script: 'Write-Host "Hello from PowerShell"'
 
-- powershell:
+- powershell: 'Write-Host "Hello from PowerShell"'
   displayName: Sample PowerShell
-  targetType: inline
-  script: 'Write-Host "Hello from PowerShell"'
