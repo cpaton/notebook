@@ -15,7 +15,12 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: PowerShell@2
+  inputs:
+    targetType: inline
+    script: 'Write-Host "Hello from PowerShell"'
+
 - powershell:
-  displayname: Sample PowerShell
+  displayName: Sample PowerShell
   targetType: inline
-  script: Write-Host "Hello from PowerShell"  
+  script: 'Write-Host "Hello from PowerShell"'
