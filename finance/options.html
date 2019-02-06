@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plex</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/hardware/synology/plex.html" />
+    <title>Options</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/finance/options.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -229,13 +229,56 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Plex</h1>
+            <h1>Options</h1>
             <hr />
-        <p>Download the Plex server package from <a href="http://plex.tv">http://plex.tv</a> for NAS</p>
-<p>The spk package file may not be detected by the NAS device and you might get an error</p>
-<p><img src="https://notebook-cdn.craigpaton.uk/notebook/Synology_Package_Not_Supported.png" alt="Synology Package Not Supported" /></p>
-<p>This is because the NAS device may be using a different architecture to that listed as supported in the package. Find the architecture for your synology device <a href="https://github.com/SynoCommunity/spksrc/wiki/Architecture-per-Synology-model">https://github.com/SynoCommunity/spksrc/wiki/Architecture-per-Synology-model</a> may help</p>
-<p>Then take the spk package file and open it within 7zip. Edit the info file and find the section arch=&quot;...&quot; and add in the architecture for your device. See <a href="https://forums.plex.tv/index.php/topic/39543-plex-on-synology-412-did-not-work/#entry251322">https://forums.plex.tv/index.php/topic/39543-plex-on-synology-412-did-not-work/#entry251322</a> for more information</p>
+        <p><strong>Pricing</strong></p>
+<p>How can you assume an option is not risky when working out its price?</p>
+<p>You can replicate the option by owning stock in the right proportion to options you can remove risk.</p>
+<p>Say you have a portfolio of</p>
+<ul>
+<li>One share bought at £100</li>
+<li>Sold two options giving the right to buy &#64; £100 one month in the future</li>
+</ul>
+<p>How much should the option premium be?</p>
+<p>Say within a month the share price will be worth either £110 or £90 - either is equally likely</p>
+<ul>
+<li>Price is £110</li>
+<li>
+<ul>
+<li>Need to provide two shares as option is exercised.  You buy in market &#64; £110 and sell for £100 - down £20</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>The stock you own has increased £10</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Net effect lost £10</li>
+</ul>
+</li>
+<li>Price is £90</li>
+<li>
+<ul>
+<li>Options not excercised</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Stock you has decreased in value £10</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Net effect lost £10</li>
+</ul>
+</li>
+</ul>
+<p>In both cases your portfolio has decreasd in value by £10.  So the option premium should be £5 each to compenate</p>
+<p>This demonstrates that by having the right mix of options and stock you are risk free.</p>
+<p>This is a simplified example.  Within the month the price of the stock will change, so to be fully hedged the portfolio mix needs to be constantly adjusted.  But it shows that the underlying stock returns are not important to the option price.  Its the volatility that is important - i.e. what the stock price will likely be on excercise date</p>
+<p>Taken from Inventing Money - The Story of Long-Term Capital Management and the legends behind it (Chapter 2 p35)</p>
 
         </div>
         <div class="col-md-3">
