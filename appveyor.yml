@@ -13,7 +13,7 @@ install:
   - mkdir ..\output
   
 build_script:
-  - .\docker-build.ps1 -OutputRelative ..\output
+  - ps: .\docker-build.ps1 -OutputRelative ..\output
 
 on_success:
   # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
