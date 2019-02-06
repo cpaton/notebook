@@ -3,15 +3,11 @@ FROM microsoft/dotnet-framework:4.7.2-sdk
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"] 
 
-RUN New-Item -Path C:\app -ItemType Directory; `
-    New-Item -Path C:\packages -ItemType Directory
+RUN New-Item -Path C:\app -ItemType Directory;
 
-WORKDIR c:\packages
-
-RUN nuget install Wyam -Version 2.1.3 -ExcludeVersion -NonInteractive
+RUN dotnet tool install --global Wyam.Tool
 
 WORKDIR C:\app
-
 COPY . .
 
-RUN dotnet c:\packages\Wyam\tools\netcoreapp2.1\Wyam.dll build
+RUN C:\Users\ContainerAdministrator\.dotnet\tools\wyam build
