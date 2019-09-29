@@ -8,7 +8,7 @@ param
 )
 
 $scriptFolder = $PSScriptRoot
-$outputFolder = Resolve-Path -Path ( Join-Path -Path $scriptFolder -ChildPath $OutputRelative )
+$outputFolder = Join-Path -Path $scriptFolder -ChildPath $OutputRelative
 
 Write-Host "Building docker image ..."
 docker build --tag capaton/notebook --file Dockerfile-build .
