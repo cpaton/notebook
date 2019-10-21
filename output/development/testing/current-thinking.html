@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current thinking</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/development/testing/current-thinking.html" />
+    <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/rainbow.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
+</head>
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Notebook</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cloud <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/cloud/network.html">Networks</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">development <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">architecture</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/architecture/CQRS.html">CQRS</a></li>
+                            <li class=""><a href="/development/architecture/DDD.html">DDD</a></li>
+                            <li class=""><a href="/development/architecture/event-sourcing.html">Event Sourcing</a></li>
+                            <li class=""><a href="/development/architecture/microservices.html">Microservices</a></li>
+                            <li class=""><a href="/development/architecture/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">computer-science</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/computer-science/compilers-and-interpreters.html">Compilers &amp; Interpreters</a></li>
+                            <li class=""><a href="/development/computer-science/os.html">OS</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">delivery</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/delivery/continuous-integration.html">CI</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">dotnet</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/dotnet/fsharp.html">F#</a></li>
+                            <li class=""><a href="/development/dotnet/gc.html">GC</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">git</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/git/ssh-keys.html">SSH Key Generation</a></li>
+                            <li class=""><a href="/development/git/ssh-key-per-host.html">SSH Key Per Host</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">powershell</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/powershell/dynamic-functions.html">Dynamic Functions</a></li>
+                            <li class=""><a href="/development/powershell/passwords.html">Passwords</a></li>
+                            <li class=""><a href="/development/powershell/publishing-modules.html">Publising Modules</a></li>
+                            <li class=""><a href="/development/powershell/updating-modules.html">Updating Modules</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">process</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/process/dev-ops.html">DevOps</a></li>
+                            <li class=""><a href="/development/process/kanban.html">Kanban</a></li>
+                            <li class=""><a href="/development/process/ToC.html">Theory of Constraints</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">python</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/python/getting-started.html">Getting Started</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">testing</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/testing/BDD.html">BDD</a></li>
+                            <li class=""><a href="/development/testing/current-thinking.html">Current thinking</a></li>
+                            <li class=""><a href="/development/testing/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">tooling</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/tooling/tfs.html">TFS</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">web</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/web/angular.html">Angular 2</a></li>
+                            <li class=""><a href="/development/web/css.html">CSS</a></li>
+                            <li class=""><a href="/development/web/npm.html">NPM</a></li>
+                            <li class=""><a href="/development/web/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">finance <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/finance/options.html">Options</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">hardware <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/network-speed.html">Network Speed</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">raspberry-pi</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/raspberry-pi/sd-cards.html">SD Cards</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">synology</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/synology/crash-plan.html">CrashPlan</a></li>
+                            <li class=""><a href="/hardware/synology/git.html">Git Backup</a></li>
+                            <li class=""><a href="/hardware/synology/gmvault.html">GMail Backup (GMVault)</a></li>
+                            <li class=""><a href="/hardware/synology/notifications.html">Notifications</a></li>
+                            <li class=""><a href="/hardware/synology/plex.html">Plex</a></li>
+                            <li class=""><a href="/hardware/synology/restore.html">Restore Plan</a></li>
+                            <li class=""><a href="/hardware/synology/ssh.html">SSH</a></li>
+                            <li class=""><a href="/hardware/synology/vpn.html">VPN</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">unifi</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/unifi/vpn.html">VPN</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">misc <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/blockchain.html">Blockchain</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">learning</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/learning/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">utility</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/utility/video.html">Video</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ops <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/machine-bootsrap.html">Machine Bootstrap</a></li>
+                            <li class=""><a href="/ops/resources.html">Resources</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">docker</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/docker/cheat-sheet.html">Cheat Sheet</a></li>
+                            <li class=""><a href="/ops/docker/on-windows.html">Docker On Windows</a></li>
+                            <li class=""><a href="/ops/docker/map-custom_folder-to-host.html">Map Custom Folder</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">linux</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/linux/arch-linux.html">Arch Linux Install</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-9">
+            <h1>Current thinking</h1>
+            <hr />
+        <ul>
+<li>Basic attributes of a good test
+<ul>
+<li><strong>Fast</strong> Quick feedback is essential to get value out of the tests</li>
+<li><strong>Isolated/Indepdendent</strong> The result of a test should not be dependent on any other test.  You should be able to run tests in any order and get the same result each time</li>
+<li><strong>Repetable</strong> Should be able to run a test many times and get the same result each time.</li>
+<li><strong>Explain failure</strong> If a test fails it should be easy to identify what feature is not working as expected.  Aim for a single assert per test</li>
+<li><strong>Readable</strong> Tests must be easy to scan to understand what they are require to run and what function they are verifying</li>
+</ul>
+</li>
+<li>Test function/features and not implementation.  The test suite should support refactoring not hinder it.  Following the pattern of test class per production class tends to lead to testing implementation details resulting in the tests changing everytime the code changes.  Prefer component style tests which test a logical unit, ideally the test should be at the level of a business feature that with a small amount of time could be explained to a user of the system and they would know why the test existed and what part of visible functionality it verifies.  To keep tests fast they must only test witihn a single process but it is common for them to span all layers within that process.  For example given a user interface that has a few layers (presentation, services, domain) that talks to a back end service tests might exist for a message being received from the back end service all the way through to the view model on the screen.</li>
+<li>Use mocks sparingly.  Mock at process boundaries but rarely for classes within a boundary.  Using too many mocks results in brittle tests and in embedding implementation details in the tests.  If needs be create simple implementations of interfaces that can also be used in the test code.  It should be easy to setup the services used within a boundary so that they can be used in a test</li>
+<li>Inspired from BDD, language is important.  The tests should be written to specify what the system should do and not what it does.  This is a subtle shift but has big consequences.  This again helps to test features and not implementation and results in more readable test names</li>
+</ul>
+<h1 id="consequences">Consequences</h1>
+<p>This style of testing has evolved over a few years and continues to evolve.  Here are some of the consequences</p>
+<ul>
+<li>Test code tends to be more complicated than the test class per production class pattern.  Often there is a class hierarchy were the base classes perform common setup and make common assertions.  On the surface this looks complicated but in general this has not been a problem.  This is in direct tension with the important goal of readability as having the code span multiple classes can make this harder, care must be taken to make the setup as terse as possible typically via the introduction of DSL for the test setup.  Worth noting that this has primarily been tried out on a large existing codebase where the infrastructure was largely baked and not changing significantly.  On a more greenfield application with signigifcant churn this could turn into a problem.</li>
+<li>Tests are very resilient to refactoring.  This has been the biggest plus of this style of testing, it has been possible to perform large scale refactoring of the internals of the application without modifying a single test.  This is very powerful and has encouraged continuous improvement of the design of the system.</li>
+<li>By testing at the feature/function level the tests stay relevant for longer and it is easier to understand which tests should change as new requirements come in.</li>
+</ul>
+<h1 id="sample">Sample</h1>
+<p>I have not tried tools like SpecFlow in a significant way and believe they could be useful to support this style of testing.  Typical pattern is to create a mini framework on top of the unit test library already in use e.g. NUnit.</p>
+<p>Sample base class</p>
+<pre><code class="language-c#">public abstract class Spec 
+{
+    [Setup]
+    public virtual void Setup()
+    {
+        EstablishContext();
+        Act();
+    }
+
+    protected virtual void EstablishContext()
+    {
+
+    }
+
+    protected virtual void Act()
+    {
+
+    }
+}
+</code></pre>
+<p>Sample spec/test</p>
+<pre><code class="language-c#">[TestFixture]
+public User_clicks_on_cell_in_first_row_of_grid : Spec
+{
+    protected override EstablishContext() 
+    {
+        _grid = new GridModel();
+    }
+
+    protected override Act() 
+    {
+        _grid.Clicked(0, 0);
+    }
+
+    [Test]
+    public void Should_colour_cell_background_to_denote_selected() 
+    {
+        Cell(0, 0).ShouldHaveBackground(Colour.Blue);
+    }
+
+    [Test]
+    public void Should_draw_solid_border_around_cell()
+    {
+        Cell(0, 0).ShouldHaveSolidBorder(Colour.Black);
+    }
+
+    private CellExpectation Cell(int row, int column)
+    {
+        return new CellExpectation(_grid, row, column);
+    }
+}
+
+</code></pre>
+<p>Corresponding CellExpectation helper class</p>
+<pre><code class="language-c#">public class CellExpectation
+{
+    private readonly GridModel _gridModel;
+    private readonly int _row;
+    private readonly int _column;
+
+    public CellExpectation(GridModel gridModel, int row, int column)
+    {
+        _gridModel = gridModel;
+        _row = row;
+        _column = column;
+    }
+
+    public void ShouldHaveBackground(Colour expected)
+    {
+        var actual = _gridModel.CellFormat(_row, _column).BackColour;
+        Assert.That(actual. Is.EqualTo(expected), &quot;Cell background at row {0} column {1} incorrect&quot;, _row, _column);
+    }
+
+    public void ShouldHaveSolidBorder(Colour expected)
+    {
+        var actualFormat = _gridModel.CellFormat(_row, _column);
+        Assert.That(actualFormat.BorderThickness. Is.EqualTo(Border.Normal), &quot;Cell border at row {0} column {1} incorrect&quot;, _row, _column);
+        Assert.That(actualFormat.BorderColour. Is.EqualTo(expected), &quot;Cell background at row {0} column {1} incorrect&quot;, _row, _column);
+    }
+}
+</code></pre>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Craig Paton</p>
+  </div>
+</footer>
+
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-3.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/bootstrap-toc.min.js"></script>
+
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+            $(this).parent().siblings().removeClass('open');
+            $(this).parent().toggleClass('open');
+        });
+    });
+})(jQuery);
+</script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 55
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
+
+<!-- style all markdown tables -->
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('table').addClass("table table-bordered table-hover")
+    });
+})(jQuery);
+</script>
+
+<!-- show horizontal scrollbar for code blocks instead of wrapping -->
+<!--<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('pre code').css({ 
+            "overflow-x": "auto",
+            "white-space": "pre"
+        })
+    });
+})(jQuery);
+</script>-->
+</html>
