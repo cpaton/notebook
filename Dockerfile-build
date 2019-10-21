@@ -1,13 +1,11 @@
 # escape=`
-FROM microsoft/dotnet-framework:4.7.2-sdk
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1 as Builder
 
-SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"] 
-
-RUN New-Item -Path C:\app -ItemType Directory;
+RUN mkdir C:\app
 
 RUN dotnet tool install --global Wyam.Tool
 
 WORKDIR C:\app
 COPY . .
 
-RUN C:\Users\ContainerAdministrator\.dotnet\tools\wyam build
+RUN %userprofile%\.dotnet\tools\wyam build

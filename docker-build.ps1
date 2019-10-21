@@ -7,11 +7,19 @@ param
     $OutputRelative = $("output")
 )
 
+$ErrorActionPreference = "Stop"
+
 $scriptFolder = $PSScriptRoot
 $outputFolder = Join-Path -Path $scriptFolder -ChildPath $OutputRelative
 
 Write-Host "Building docker image ..."
 docker build --tag capaton/notebook --file Dockerfile-build .
+$dockerBuildExitCode = $LASTEXITCODE
+Write-Host "Docker Build Exit Code : $dockerBuildExitCode"
+if ($dockerBuildExitCode -ne 0)
+{
+    throw "Failed to build docker file. See above for details"
+}
 Write-Host "Docker image built"
 
 Write-Host "Creating container from image"
