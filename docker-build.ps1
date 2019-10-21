@@ -1,3 +1,5 @@
+#! /usr/bin/env pwsh
+
 [CmdletBinding()]
 param
 (
@@ -31,7 +33,7 @@ try
         Remove-Item -Path $outputFolder -Recurse
     }
 
-    docker container cp notebook-build:c:\app\output "$outputFolder"
+    docker container cp notebook-build:/usr/share/nginx/html "$outputFolder"
 }
 finally
 {

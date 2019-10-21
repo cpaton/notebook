@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Ubuntu1804
 
 branches:
   only:
@@ -10,10 +10,10 @@ environment:
 
 install:
   - git submodule update --init --recursive  
-  - mkdir ..\output
+  - mkdir ../output
   
 build_script:
-  - ps: .\docker-build.ps1 -OutputRelative ..\output
+  - ps: ./docker-build.ps1 -OutputRelative ../output
 
 on_success:
   # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
@@ -21,10 +21,10 @@ on_success:
   - git config --global credential.helper store
   - git config --global user.email "craigpaton@gmail.com"
   - git config --global user.name "Craig Paton"
-  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - git checkout gh-pages
   - git rm -rf .
-  - xcopy ..\output . /E
+  - cp --recusrive --verbose ../output .
     # EDIT the origin of your repository - have to reset it here because AppVeyor pulls from SSH, but GitHub won't accept SSH pushes
   - git remote set-url origin https://github.com/cpaton/notebook.git
   - git add -A

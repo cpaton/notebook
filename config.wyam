@@ -49,14 +49,14 @@ Pipelines.Add("RenderPages",
     Documents("Pages"),
     Markdown().UseExtensions(),
     Replace("site.asset-base-url", Settings["site.asset-base-url"]),
-    Razor().WithLayout("/shared/_page.cshtml"),
+    Razor().WithLayout("/Shared/_page.cshtml"),
     WriteFiles()
 );
 
 Pipelines.Add("FrontPage",
     ReadFiles("**/{!_,}*.cshtml"),
     Meta("CanonicalUrl", new Uri(new Uri(@doc.String("site.url")), @doc.String("RelativeFilePath").Replace(".cshtml", ".html")).AbsoluteUri),
-    Razor().WithLayout("/shared/_default.cshtml"),
+    Razor().WithLayout("/Shared/_default.cshtml"),
     WriteFiles(".html")
 );    
 

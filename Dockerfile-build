@@ -1,11 +1,15 @@
-# escape=`
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 as Builder
 
-RUN mkdir C:\app
+RUN mkdir /app
 
 RUN dotnet tool install --global Wyam.Tool
 
-WORKDIR C:\app
+WORKDIR /app
 COPY . .
 
-RUN %userprofile%\.dotnet\tools\wyam build
+RUN ~/.dotnet/tools/wyam build
+
+FROM nginx:stable-alpine
+
+RUN rm /usr/share/nginx/html/*
+COPY --from=Builder /app/output /usr/share/nginx/html
