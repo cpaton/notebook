@@ -78,6 +78,7 @@
                             <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">git</a>
                                                         <!-- NavBarMenu Start -->
                             <ul class="dropdown-menu">
+                            <li class=""><a href="/development/git/snippets.html">Snippets</a></li>
                             <li class=""><a href="/development/git/ssh-keys.html">SSH Key Generation</a></li>
                             <li class=""><a href="/development/git/ssh-key-per-host.html">SSH Key Per Host</a></li>
                             </ul>
@@ -257,28 +258,47 @@
 timedatectl set-ntp true
 </code></pre>
 <h1 id="paritions">Paritions</h1>
-<p>As Hyper-V will be using UEFI boot GPT type of partition table will be used as opposed to MBR.  Use the gdisk utility to setup three paritions</p>
+<p>As Hyper-V will be using UEFI boot, GPT type of partition table will be used as opposed to MBR (<a href="https://wiki.archlinux.org/index.php/Partitioning#Choosing_between_GPT_and_MBR">details</a>).  Use the <a href="https://wiki.archlinux.org/index.php/GPT_fdisk">GTP fdisk utility (aka gdisk)</a> to setup two paritions</p>
 <p>| Partition | Linux Mount Point | Type Code | Type | Size | Comment |
 | /dev/sda1 | /boot | ef00 | EFI System | 512M | UEFI boot disk |
 | /dev/sda2 | | 8200 | Linux Swap | 1G | Swap disk automounted by systemd |
 | /dev/sda3 | / | 8300 | Linux FileSystem | * | Root file system |</p>
+<p>| Partition | Linux Mount Point | Type Code | Type | Size | Comment |
+| /dev/sda1 | /boot | ef00 | EFI System | 512M | UEFI boot disk |
+| /dev/sda2 | / | 8300 | Linux FileSystem | * | Root file system |</p>
+<pre><code>gdisk /dev/sda # use lsblk to find the name of the disk
+o # this creates a new empty GPT
+
+# EFI system partition
+n # create a new partition
+# Accept default parition number
++1M # start sector leaving room for an MBR later
++512M # parition size
+ef00 # EFI system partition
+
+# Root filesystem
+n
+# accept default partition number, start (one sector after previous) and end sectors (end of disk)
+8304 # as partition type - Linux root file system
+
+p # print the partition table
+</code></pre>
 <p>Once created format the partitions</p>
-<pre><code>&gt; mkfs.fat -F32 /dev/sda1
-&gt; mkswap /dev/sda2
-&gt; mkfs.ext4 /dev/sda3
+<pre><code>&gt; mkfs.fat -F32 /dev/sda1 # EFI partition must be a FAT variant
+&gt; mkfs.ext4 /dev/sda2
 </code></pre>
 <p>Mount the root and boot filesystem</p>
-<pre><code>mnt /dev/sda3 /mnt 
+<pre><code>mnt /dev/sda2 /mnt 
 mkdir /mnt/boot
 mnt /dev/sda1 /mnt/boot 
 </code></pre>
 <h1 id="base-installation">Base Installation</h1>
 <p>Install the core linux packages using the Arch bootstrapper</p>
-<pre><code>pacstrap /mnt base
+<pre><code>pacstrap /mnt base linux linux-firmware
 </code></pre>
 <h1 id="configuration">Configuration</h1>
 <p>Make sure the filesystem is automounted on boot and change to use the new filesystem as root</p>
-<pre><code>fstab -L /mnt &gt;&gt; /mnt/etc/fstab
+<pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
 arch-chroot /mnt
 </code></pre>
 <p>Timezone</p>
@@ -292,16 +312,15 @@ hwclock --systohc
 <p>Add entry for Arch</p>
 <pre><code>title   Arch Linux
 linux   /vmlinuz-linux
-initrd  /intel-ucode.img
 initrd  /initramfs-linux.img
 options root=PARTUUID=XXX rw
 </code></pre>
 <p>vmlinuz-linux is a gzip compressed linux kernel which is used to load the real kernel. To load the kernel it needs some tools and a workspace which is done in the initial RAM disk (initrd).  The intel-ucode image is used to auto-load intel microcode updates, and initramfs-linux.img contains the basic tools to initialise a linux kernel and load the modules</p>
-<p>Options specify the location of the partition which contains the root file system.  This is /dev/sda3 from the partitions setup above.  You can find the UUID via</p>
-<pre><code>blkid -s PARTUUID -o value /dev/sda3
+<p>Options specify the location of the partition which contains the root file system.  This is /dev/sda2 from the partitions setup above.  You can find the UUID via</p>
+<pre><code>blkid -s PARTUUID -o value /dev/sda2
 </code></pre>
 <p>At this point copy-paste doesn't work so to avoid having to type in the GUID correctly would suggest appending it to the arch.conf file and editing later in nano</p>
-<pre><code>blkid -s PARTUUID -o value /dev/sda3 &gt;&gt; /boot/loader/entries/arch.conf
+<pre><code>blkid -s PARTUUID -o value /dev/sda2 &gt;&gt; /boot/loader/entries/arch.conf
 </code></pre>
 <p>The loader.conf file can then be setup</p>
 <pre><code>timeout 5
