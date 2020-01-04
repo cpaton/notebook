@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular 2</title>
-    <link rel="canonical" href="https://notebook.craigpaton.uk/development/web/angular.html" />
+    <title>Snippets</title>
+    <link rel="canonical" href="https://notebook.craigpaton.uk/development/bash/snippets.html" />
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -254,14 +254,16 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h1>Angular 2</h1>
+            <h1>Snippets</h1>
             <hr />
-        <h1 id="resources">Resources</h1>
-<ul>
-<li><a href="https://angular.io/docs/ts/latest/">Angular 2 Docs</a></li>
-<li><a href="https://vsavkin.com/">Victor Savkin</a></li>
-<li><a href="http://blog.thoughtram.io/angular/2016/09/15/angular-2-final-is-out.html">Thoughtram</a></li>
-</ul>
+        <p>Stop on first error</p>
+<pre><code>set -e
+set -o errexit
+command || { echo &quot;command failed&quot;; exit 1; } 
+
+# command you are interested in the return code
+command || true
+</code></pre>
 
         </div>
         <div class="col-md-3">
