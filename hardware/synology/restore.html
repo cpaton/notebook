@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restore Plan</title>
+    <link rel="canonical" href="https://nb.craigpaton.uk/hardware/synology/restore.html" />
+    <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/rainbow.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/customisation.css" media="screen">
+</head>
+<body data-spy="scroll" data-target="#toc">
+    <nav id="header-nav-bar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Notebook</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cloud <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/cloud/network.html">Networks</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">development <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">architecture</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/architecture/CQRS.html">CQRS</a></li>
+                            <li class=""><a href="/development/architecture/DDD.html">DDD</a></li>
+                            <li class=""><a href="/development/architecture/event-sourcing.html">Event Sourcing</a></li>
+                            <li class=""><a href="/development/architecture/microservices.html">Microservices</a></li>
+                            <li class=""><a href="/development/architecture/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">bash</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/bash/snippets.html">Snippets</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">computer-science</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/computer-science/compilers-and-interpreters.html">Compilers &amp; Interpreters</a></li>
+                            <li class=""><a href="/development/computer-science/os.html">OS</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">delivery</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/delivery/continuous-integration.html">CI</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">dotnet</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/dotnet/fsharp.html">F#</a></li>
+                            <li class=""><a href="/development/dotnet/gc.html">GC</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">git</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/git/snippets.html">Snippets</a></li>
+                            <li class=""><a href="/development/git/ssh-keys.html">SSH Key Generation</a></li>
+                            <li class=""><a href="/development/git/ssh-key-per-host.html">SSH Key Per Host</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">github</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/github/actions.html">GitHub Actions</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">powershell</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/powershell/dynamic-functions.html">Dynamic Functions</a></li>
+                            <li class=""><a href="/development/powershell/passwords.html">Passwords</a></li>
+                            <li class=""><a href="/development/powershell/publishing-modules.html">Publising Modules</a></li>
+                            <li class=""><a href="/development/powershell/updating-modules.html">Updating Modules</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">process</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/process/dev-ops.html">DevOps</a></li>
+                            <li class=""><a href="/development/process/kanban.html">Kanban</a></li>
+                            <li class=""><a href="/development/process/ToC.html">Theory of Constraints</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">python</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/python/getting-started.html">Getting Started</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">testing</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/testing/BDD.html">BDD</a></li>
+                            <li class=""><a href="/development/testing/current-thinking.html">Current thinking</a></li>
+                            <li class=""><a href="/development/testing/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">tooling</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/tooling/tfs.html">TFS</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">web</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/development/web/angular.html">Angular 2</a></li>
+                            <li class=""><a href="/development/web/css.html">CSS</a></li>
+                            <li class=""><a href="/development/web/npm.html">NPM</a></li>
+                            <li class=""><a href="/development/web/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">finance <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/finance/options.html">Options</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">hardware <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/network-speed.html">Network Speed</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">raspberry-pi</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/raspberry-pi/sd-cards.html">SD Cards</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">synology</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/synology/crash-plan.html">CrashPlan</a></li>
+                            <li class=""><a href="/hardware/synology/git.html">Git Backup</a></li>
+                            <li class=""><a href="/hardware/synology/gmvault.html">GMail Backup (GMVault)</a></li>
+                            <li class=""><a href="/hardware/synology/notifications.html">Notifications</a></li>
+                            <li class=""><a href="/hardware/synology/plex.html">Plex</a></li>
+                            <li class=""><a href="/hardware/synology/restore.html">Restore Plan</a></li>
+                            <li class=""><a href="/hardware/synology/ssh.html">SSH</a></li>
+                            <li class=""><a href="/hardware/synology/vpn.html">VPN</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">unifi</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/hardware/unifi/vpn.html">VPN</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">misc <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/blockchain.html">Blockchain</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">learning</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/learning/resources.html">Resources</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">utility</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/misc/utility/video.html">Video</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ops <span class="caret"></span></a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/machine-bootsrap.html">Machine Bootstrap</a></li>
+                            <li class=""><a href="/ops/resources.html">Resources</a></li>
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">docker</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/docker/cheat-sheet.html">Cheat Sheet</a></li>
+                            <li class=""><a href="/ops/docker/on-windows.html">Docker On Windows</a></li>
+                            <li class=""><a href="/ops/docker/map-custom_folder-to-host.html">Map Custom Folder</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">linux</a>
+                                                        <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+                            <li class=""><a href="/ops/linux/arch-linux.html">Arch Linux Install</a></li>
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                            </li>   
+                            </ul>
+                            <!-- NavBarMenu Start --> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-9">
+            <h1>Restore Plan</h1>
+            <hr />
+        <p>Linux provides a kernel module called ecryptfs that provides support for an encrypted filesystem. Idea is to mount an encrypted file system container from the USB external hard disk as a shared folder on the main volume. Using the following command (which must be run as root) we are mounting a folder called Encrypted from the USB drive as EncryptedBackup on the main volume</p>
+<pre><code class="language-bash">mount.ecryptfs /volumeUSB1/usbshare/Encrypted /volume1/EncryptedBackup -o key=passphrase:passphrase_passwd=&lt;passphrase&gt;,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=n,no_sig_cache,ecryptfs_enable_filename_crypto=n
+</code></pre>
+<p>Any data written to /volume1/EncryptedBackup will now be routed to the USB drive and it will be encrypted. Once this is setup you can setup a backup from within Synology to target this EncryptedBacku shared folder.</p>
+<p>Data can then be read from another Linux machine e.g. a Raspberry Pi. It requires installing ecryptfs-utils package, creating a directory to use as the unencrypted mount point and then mounting the USB disk.</p>
+<pre><code class="language-bash">sudo apt-get install ecryptfs-utils
+mkdir /media/pi/Unencrypted
+sudo mount -t ecryptfs /media/pi/1.42.6-5022/&#64;Backup1&#64; /media/pi/Unencrypted -o key=passphrase:passphrase_passwd=&lt;passphrase&gt;,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=n,no_sig_cache,ecryptfs_enable_filename_crypto=n
+</code></pre>
+<p>Note if the password/passphrase is incorrect it will still mount the disk but the contents will be meaningless.</p>
+<p>To access the files from a windows machine you will need Samba</p>
+<pre><code class="language-bash">sudo apt-get install samba samba-common-bin
+</code></pre>
+<p>Samba configuration then needs to be updated</p>
+<pre><code class="language-bash">sudo nano /etc/samba/smb.conf
+</code></pre>
+<p>Need to setup the workgroup so that windows machines can see the share and add the share details under the share definitions section</p>
+<pre>
+workgroup = WORKGROUP
+wins support = yes
+ 
+[backup]
+   comment=Backup
+   path=/media/pi/Unencrypted
+   browseable=Yes
+   writeable=Yes
+   only guest=no
+   create mask=0777
+   directory mask=0777
+   public=no
+</pre>
+<p>Now add the pi user as a samba user</p>
+<pre><code class="language-bash">sudo smbpasswd -a pi
+</code></pre>
+<p>This will require a password for the pi account when attempting to connect to the share.</p>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="toc" data-toggle="toc" data-spy="affix"></nav>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Craig Paton</p>
+  </div>
+</footer>
+
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-3.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/bootstrap-toc.min.js"></script>
+
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+            $(this).parent().siblings().removeClass('open');
+            $(this).parent().toggleClass('open');
+        });
+    });
+})(jQuery);
+</script>
+
+<script lang="javascript">
+$('body').scrollspy({ 
+    target: '#toc', offset: 55
+})
+</script>
+
+<script src="/js/anchor-fix.js"></script>
+
+<!-- style all markdown tables -->
+<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('table').addClass("table table-bordered table-hover")
+    });
+})(jQuery);
+</script>
+
+<!-- show horizontal scrollbar for code blocks instead of wrapping -->
+<!--<script lang="javascript">
+(function($){
+    $(document).ready(function(){
+        $('pre code').css({ 
+            "overflow-x": "auto",
+            "white-space": "pre"
+        })
+    });
+})(jQuery);
+</script>-->
+</html>
