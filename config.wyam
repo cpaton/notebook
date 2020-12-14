@@ -2,9 +2,10 @@
 #n Wyam.Yaml
 #n Wyam.Markdown
 
-Settings["site.url"] = "https://notebook.craigpaton.uk";
+Settings["site.url"] = "https://nb.craigpaton.uk";
 Settings["site.base-url"] = "";
-Settings["site.asset-base-url"] = "https://notebook-cdn.craigpaton.uk/notebook";
+//Settings["site.asset-base-url"] = "https://notebook-cdn.craigpaton.uk/notebook";
+Settings["site.asset-base-url"] = "https://assets.nb.craigpaton.uk/files";
 Settings["site.title"] = "Notebook";
 Settings["site.description"] = "Programmers notebook";
 

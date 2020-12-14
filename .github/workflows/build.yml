@@ -1,0 +1,43 @@
+name: build
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: wyam build
+        run: ./docker-build.ps1
+        shell: pwsh
+
+      - name: checkout gh-pages
+        uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+          path: '.build/gh-pages'
+
+      - name: push to gh-pages
+        run: ./push-output.ps1
+        shell: pwsh
+
+      - name: push to azure
+        run: ./azure-sync.ps1
+        shell: pwsh
+        env:
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_SERVICE_PRINCIPAL: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+          AZURE_CONNECTION_STRING: ${{ secrets.AZURE_BLOB_CONNECTION_STRING }}
+
+      # - name: env vars
+      #   run: env | sort
+
+      # - name: list
+      #   run: ls -la $GITHUB_WORKSPACE
+
+      # - name: event
+      #   run: cat $GITHUB_EVENT_PATH
