@@ -13,6 +13,8 @@ param(
     $GhPagesBranchRelativePath = $('.build/gh-pages')
 )
 
+$ErrorActionPreference = "Stop"
+
 $ghPagesPath = Join-Path $WorkspaceRoot $GhPagesBranchRelativePath
 $outputPath = Join-Path $WorkspaceRoot $OutputRelativePath
 
