@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\_cp\Git\notebook\src" t="IncludeFlat">
+      <e p="notebook" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CanonicalUrl.cs" t="Include" />
+        <e p="Constants.cs" t="Include" />
+        <e p="Extensions.cs" t="Include" />
+        <e p="input" t="Include">
+          <e p=".nojekyll" t="Include" />
+          <e p="cloud" t="Include">
+            <e p="network.md" t="Include" />
+          </e>
+          <e p="CNAME" t="Include" />
+          <e p="css" t="Include">
+            <e p="bootstrap-darkly.min.css" t="Include" />
+            <e p="bootstrap-solar.css" t="Include" />
+            <e p="bootstrap-solar.min.css" t="Include" />
+            <e p="bootstrap-theme.css" t="Include" />
+            <e p="bootstrap-theme.css.map" t="Include" />
+            <e p="bootstrap-theme.min.css" t="Include" />
+            <e p="bootstrap-theme.min.css.map" t="Include" />
+            <e p="bootstrap-toc.min.css" t="Include" />
+            <e p="bootstrap.css" t="Include" />
+            <e p="bootstrap.css.map" t="Include" />
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="bootstrap.min.css.map" t="Include" />
+            <e p="custom.css" t="Include" />
+            <e p="customisation.css" t="Include" />
+            <e p="main.scss.old" t="Include" />
+            <e p="rainbow.css" t="Include" />
+            <e p="solarized-dark.css" t="Include" />
+            <e p="solarized-light.css" t="Include" />
+          </e>
+          <e p="development" t="Include">
+            <e p="architecture" t="Include">
+              <e p="CQRS.md" t="Include" />
+              <e p="DDD.md" t="Include" />
+              <e p="event-sourcing.md" t="Include" />
+              <e p="microservices.md" t="Include" />
+              <e p="resources.md" t="Include" />
+            </e>
+            <e p="bash" t="Include">
+              <e p="snippets.md" t="Include" />
+            </e>
+            <e p="computer-science" t="Include">
+              <e p="compilers-and-interpreters.md" t="Include" />
+              <e p="os.md" t="Include" />
+            </e>
+            <e p="delivery" t="Include">
+              <e p="continuous-integration.md" t="Include" />
+            </e>
+            <e p="dotnet" t="Include">
+              <e p="fsharp.md" t="Include" />
+              <e p="gc.md" t="Include" />
+            </e>
+            <e p="Git" t="Include">
+              <e p="snippets.md" t="Include" />
+              <e p="ssh-key-per-host.md" t="Include" />
+              <e p="ssh-keys.md" t="Include" />
+            </e>
+            <e p="github" t="Include">
+              <e p="actions.md" t="Include" />
+            </e>
+            <e p="powershell" t="Include">
+              <e p="dynamic-functions.md" t="Include" />
+              <e p="passwords.md" t="Include" />
+              <e p="publishing-modules.md" t="Include" />
+              <e p="updating-modules.md" t="Include" />
+            </e>
+            <e p="process" t="Include">
+              <e p="dev-ops.md" t="Include" />
+              <e p="kanban.md" t="Include" />
+              <e p="ToC.md" t="Include" />
+            </e>
+            <e p="python" t="Include">
+              <e p="getting-started.md" t="Include" />
+            </e>
+            <e p="testing" t="Include">
+              <e p="BDD.md" t="Include" />
+              <e p="current-thinking.md" t="Include" />
+              <e p="resources.md" t="Include" />
+            </e>
+            <e p="tooling" t="Include">
+              <e p="tfs.md" t="Include" />
+            </e>
+            <e p="web" t="Include">
+              <e p="angular.md" t="Include" />
+              <e p="css.md" t="Include" />
+              <e p="npm.md" t="Include" />
+              <e p="resources.md" t="Include" />
+            </e>
+          </e>
+          <e p="finance" t="Include">
+            <e p="options.md" t="Include" />
+          </e>
+          <e p="hardware" t="Include">
+            <e p="network-speed.md" t="Include" />
+            <e p="raspberry-pi" t="Include">
+              <e p="sd-cards.md" t="Include" />
+            </e>
+            <e p="synology" t="Include">
+              <e p="crash-plan.md" t="Include" />
+              <e p="git.md" t="Include" />
+              <e p="gmvault.md" t="Include" />
+              <e p="notifications.md" t="Include" />
+              <e p="plex.md" t="Include" />
+              <e p="restore.md" t="Include" />
+              <e p="ssh.md" t="Include" />
+              <e p="vpn.md" t="Include" />
+            </e>
+            <e p="unifi" t="Include">
+              <e p="vpn.md" t="Include" />
+            </e>
+          </e>
+          <e p="index.cshtml" t="Include" />
+          <e p="js" t="Include">
+            <e p="anchor-fix.js" t="Include" />
+            <e p="bootstrap-toc.min.js" t="Include" />
+            <e p="bootstrap.js" t="Include" />
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="highlight.pack.js" t="Include" />
+            <e p="jquery-3.1.0.min.js" t="Include" />
+            <e p="npm.js" t="Include" />
+          </e>
+          <e p="misc" t="Include">
+            <e p="blockchain.md" t="Include" />
+            <e p="learning" t="Include">
+              <e p="resources.md" t="Include" />
+            </e>
+            <e p="utility" t="Include">
+              <e p="video.md" t="Include" />
+            </e>
+          </e>
+          <e p="ops" t="Include">
+            <e p="docker" t="Include">
+              <e p="cheat-sheet.md" t="Include" />
+              <e p="map-custom_folder-to-host.md" t="Include" />
+              <e p="on-windows.md" t="Include" />
+            </e>
+            <e p="linux" t="Include">
+              <e p="arch-linux.md" t="Include" />
+            </e>
+            <e p="machine-bootsrap.md" t="Include" />
+            <e p="resources.md" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_default.cshtml" t="Include" />
+            <e p="_page.cshtml" t="Include" />
+            <e p="_ViewImports.cshtml" t="Include" />
+            <e p="partials" t="Include">
+              <e p="_footer.cshtml" t="Include" />
+              <e p="_head.cshtml" t="Include" />
+              <e p="_navBar.cshtml" t="Include" />
+              <e p="_navBarMenu.cshtml" t="Include" />
+              <e p="_scripts.cshtml" t="Include" />
+              <e p="_tableOfContents.cshtml" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Notebook.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Notebook.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pipeline" t="Include">
+          <e p="FrontPage.cs" t="Include" />
+          <e p="GitHubPages.cs" t="Include" />
+          <e p="Pages.cs" t="Include" />
+          <e p="PageTree.cs" t="Include" />
+          <e p="Render.cs" t="Include" />
+          <e p="Resources.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Settings.cs" t="Include" />
+      </e>
+      <e p="Notebook.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\craig\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\craig\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Notebook.-1135444145.00" t="ExcludeRecursive" />
+  </component>
+</project>

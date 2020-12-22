@@ -1,0 +1,20 @@
+@using Notebook
+@inherits Statiq.Razor.StatiqRazorPage<Statiq.Common.IDocument>
+
+<div class="container">
+    <ul>
+        @{
+            var rootDocuments = ExecutionContext.RootDocuments();
+
+            foreach (var rootDocument in rootDocuments)
+            {
+                var children = rootDocument.Children();
+                var hasChildren = children.Any();
+                @if (hasChildren)
+                {
+                    @Html.Partial("partials/_tableOfContents", rootDocument)
+                }
+            }
+        }
+    </ul>
+</div>

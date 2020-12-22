@@ -1,0 +1,23 @@
+@using Notebook
+@inherits StatiqRazorPage<IDocument>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @if (Model.TryGetValue("Title", out string title))
+    {
+        <title>@title</title>
+    }
+    else
+    {
+        <title>@(Model.Get<string>("site.title"))</title>
+    }
+    <!-- @(Model.Get<string>("Keys.TreePath")) -->
+    <link rel="canonical" href="@(Model.Get<string>(SettingKeys.ConnonicalUrl).Replace("index.html", ""))"/>
+    <!--<link rel="stylesheet" type="text/css" href="@Model["site.base-url"]/css/bootstrap.css" media="screen">-->
+    <link rel="stylesheet" type="text/css" href="@(Model.Get<string>("site.base-url"))/css/bootstrap-solar.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="@(Model.Get<string>("site.base-url"))/css/bootstrap-toc.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="@(Model.Get<string>("site.base-url"))/css/rainbow.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="@(Model.Get<string>("site.base-url"))/css/customisation.css" media="screen">
+</head>

@@ -1,0 +1,26 @@
+@using Notebook
+@{
+    @*
+    Given the first item to display within the dropdown shown off the main nav bar.  Responsible
+    for displaying all items at this level and below i.e. it needs to loop 
+    *@
+    IOrderedEnumerable<IDocument> documents = Model.Children();
+}
+                            <!-- NavBarMenu Start -->
+                            <ul class="dropdown-menu">
+@foreach (var document in documents) {
+    var children = document.Children();
+    var hasChildren = children.Any();
+
+    @if (hasChildren) {
+                            <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">@document.LeafName()</a>
+                            @Html.Partial("partials/_navBarMenu", document) 
+                            </li>   
+    }
+    else 
+    {
+                            <li class=""><a href="@document.Url()">@document.Title()</a></li>
+    }
+}
+                            </ul>
+                            <!-- NavBarMenu End -->

@@ -1,0 +1,28 @@
+@using Notebook
+@inherits StatiqRazorPage<IDocument>
+
+@{
+    @*
+    Given a root item to display lists out each page and its children
+    *@
+    var parent = Model;
+    var children = parent.Children();
+    var hasChildren = children.Any();
+}
+
+    @if (hasChildren) {
+        <li>@parent.LeafName()
+        @foreach (var child in children)
+        {
+            <ul>
+                @Html.Partial("partials/_tableOfContents", child)
+            </ul>
+        }
+        </li>
+    }
+    else 
+    {
+        <li>
+            <a href="@parent.Url()">@parent.Title()</a>
+        </li>
+    }
