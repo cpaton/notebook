@@ -34,7 +34,7 @@ jobs:
           AZURE_CONNECTION_STRING: ${{ secrets.AZURE_BLOB_CONNECTION_STRING }}
 
       - name: push docker image
-        run: ./scripts/docker-build.ps1
+        run: ./scripts/docker-publish.ps1
         shell: pwsh
         env:
           DOCKER_USER_NAME: ${{ secrets.DOCKER_USER_NAME }}
