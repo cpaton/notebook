@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b63dbf83-9bfb-477e-9a07-f0d5e9ad2542" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Notebook/input/Shared/partials/_navBar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Notebook/input/Shared/partials/_navBar.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Notebook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Notebook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebook/input/css/rainbow.css" beforeDir="false" afterPath="$PROJECT_DIR$/Notebook/input/css/rainbow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebook/input/js/highlight.pack.js" beforeDir="false" afterPath="$PROJECT_DIR$/Notebook/input/js/highlight.pack.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9A383C29-B58D-413A-BC27-B59DCC5C0237/8/BootstrapperFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9A383C29-B58D-413A-BC27-B59DCC5C0237/2/Bootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/89/ModuleList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/E/IConfiguratorCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/9B/ClassCatalog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1FED15E1-2CA6-4392-8422-CDAA26A958F0/48/ReadFiles.cs" root0="SKIP_HIGHLIGHTING" />
@@ -43,11 +44,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9A383C29-B58D-413A-BC27-B59DCC5C0237/1F/ConfiguratorCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/56/DocumentFile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/197E7215-9115-4EB5-B9B0-D91CD8746430/3/RenderMarkdown.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/31/IDocumentFactoryCreateDocumentExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/60/NormalizedPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9A383C29-B58D-413A-BC27-B59DCC5C0237/22/PipelineBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/5F/IReadOnlyFileSystemExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/F9/IReadOnlyFileSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/794B515E-F1E5-4DA1-A775-A9E8138033C9/D/RenderRazor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,8 +55,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1FED15E1-2CA6-4392-8422-CDAA26A958F0/14/FileSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9A383C29-B58D-413A-BC27-B59DCC5C0237/14/EngineManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/794B515E-F1E5-4DA1-A775-A9E8138033C9/C/RazorService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/F7/IFileSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/794B515E-F1E5-4DA1-A775-A9E8138033C9/A/RazorCompiler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ED3BDD0-DA74-4D4D-A15F-0E7A1508F160/2D/IDocument.cs" root0="SKIP_HIGHLIGHTING" />
@@ -89,6 +86,7 @@
       <option value="$PROJECT_DIR$/Notebook/CanonicalUrl.cs" />
       <option value="$PROJECT_DIR$/Notebook/Program.cs" />
       <option value="$PROJECT_DIR$/Notebook/input/Shared/partials/_navBar.cshtml" />
+      <option value="$PROJECT_DIR$/../.github/workflows/build.yml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lwAMlEQGaTPwO2sUJF5Cwm8RWs" />
@@ -144,14 +142,15 @@
       <option name="presentableId" value="Default" />
       <updated>1608497737952</updated>
       <workItem from="1608497748235" duration="6000" />
-      <workItem from="1608497923483" duration="29261000" />
+      <workItem from="1608497923483" duration="29801000" />
+      <workItem from="1608681542448" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
