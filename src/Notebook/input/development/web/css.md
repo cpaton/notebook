@@ -15,3 +15,4 @@ Good article explaining the core prinicpals of Flexbox building from first princ
  * [MDN CSS Building Blocks](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks)
  * [Pluralsight: Introduction to CSS K Scott Allen](https://www.pluralsight.com/courses/css-intro)
  * [Bootstrap Themes](https://bootswatch.com/)
+ * [CSS Tricks Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background)
