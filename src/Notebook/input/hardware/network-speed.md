@@ -44,6 +44,18 @@ Lenonvo Carbon X1 with an (Intel Dual Band Wireless-N 7260)[http://ark.intel.com
 
 ## Powerline
 
+TP-LINK G.hn 2400 (PG2400P)
+
+Current - 5.65
+Wifi (Laptop) - 12
+New - 13 
+
+| Scenario | Avg Speed (MByte/sec) | Comments / Observations |
+|---|:-:|---|
+| PowerLine Same Floor (Switch) | 19.2 | Very disaapointing, no different to previous models |
+| PowerLine Floor Below (Switch) | 13.0 |  |
+
+
 TP-LINK AV2000 Mbps (TL-PA9020P)
 
 | Scenario | Avg Speed (MByte/sec) | Comments / Observations |
