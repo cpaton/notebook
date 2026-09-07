@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CI</title>
+        <title>Certificates</title>
     <!--  -->
-    <link rel="canonical" href="https://nb.craigpaton.uk/development/delivery/continuous-integration.html"/>
+    <link rel="canonical" href="https://nb.craigpaton.uk/development/security/certificates.html"/>
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen">-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-solar.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-toc.min.css" media="screen">
@@ -272,29 +272,25 @@
 
     <div class="row">
         <div class="col-md-9">
-                <h1>CI</h1>
+                <h1>Certificates</h1>
                 <hr/>
-            <h1 id="riot-games">Riot Games</h1>
-<p>Build engineers from Riot Games posted a series of posts describing their continuous delivery setup with containers.</p>
+            <p>TLS certificates are x.509 which bind a name and public key together</p>
+<p>Valid chain must be formed for a certificate to be trusted.<br />
+Two types of certificate form the chain CA certificates and end entity certificate
+There maybe more than one CA certificate in the chain.  Root CA and intermediate CA</p>
+<p>x.509 v3 certificates have properties, constraints and extensions.  Extensions are named by Object Identifiers (OIDs) standardised by International Telecommunications Union (ITU).  Extensions are can be marked critical to denote they must be understood and processed for the certificate to be considered valid.  Commonly the intermediate CA will restrict the length of the validation chain to prevent other intermediate CAs being added to the chain e.g.</p>
 <ul>
-<li><a href="https://engineering.riotgames.com/news/thinking-inside-container">Part I: Thinking Inside the Container</a></li>
-<li><a href="http://engineering.riotgames.com/news/putting-jenkins-docker-container">Part II: Putting Jenkins in a Docker Container</a></li>
-<li><a href="http://engineering.riotgames.com/news/docker-jenkins-data-persists">Part III: Docker &amp; Jenkins: Data That Persists</a></li>
-<li><a href="http://engineering.riotgames.com/news/jenkins-docker-proxies-and-compose">Part IV: Jenkins, Docker, Proxies, and Compose</a></li>
-<li><a href="http://engineering.riotgames.com/news/taking-control-your-docker-image">Part V: Taking Control of Your Docker Image</a></li>
-<li><a href="http://engineering.riotgames.com/news/building-jenkins-inside-ephemeral-docker-container">Part VI: Building with Jenkins Inside an Ephemeral Docker Container</a></li>
-<li><a href="http://engineering.riotgames.com/news/jenkins-ephemeral-docker-tutorial">Part VII: Tutorial: Building with Jenkins Inside an Ephemeral Docker Container</a></li>
-<li><a href="http://engineering.riotgames.com/news/thinking-inside-container-dockercon-talk-and-story-so-far">Part VIII: DockerCon Talk and the Story So Far</a></li>
+<li>RootCA no path length restriction</li>
+<li>Intermediate CA path length of 0 - denotes no more CAs allowed in chain</li>
+<li>End entity certificate - path length restriction not supported</li>
 </ul>
-<p>Part I lists their principles which underpin the setup</p>
-<blockquote>
+<p>Servers should send the full certificate chain during the TLS handshake.  Its possible intermediate certificates are not included in which case the CA Issuers URL can be used to locate those certificates - this is stored under the Authority Information Access</p>
+<p>Its possible for multiple certificates with the same subject and public key to be created.  Each of those will have unique signatures as the issuing certificate will have different private keys.  But this allows multiple valid chains to exist for a single end entity certificate.  This supports more advanced scenarios like cross business trust relationships and rotating of intermediate CA certificates (<a href="https://en.m.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification">https://en.m.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification</a>)</p>
+<p>When forming a chain the certificate specifies an authority identitifier which should match the subject identifier on the issuing certificate.  Once you have the issuing certificate you can use its public key to verify the signature on the current certificate being validated.  This continues recusively until you reach the root CA certificate which is self signed and has to be explicitly trusted.</p>
+<h2 id="resources">Resources</h2>
 <ul>
-<li>We believe that engineering teams have to be able to totally own their technology stacks, down to administrative level control of their build environments.</li>
-<li>We believe in Configuration as Code. Teams should maintain their build pipeline and environment in source control whenever possible.</li>
-<li>We believe that every time an engineer performs a build, they need to build a shippable version of their software in all deployable configurations.  A “build” is not a code compile; it’s the entire set of deployable artifacts.</li>
-<li>We believe that shipping is a product decision. Product teams need to be able to deploy and see the latest shippable version at the push of a button.</li>
+<li><a href="https://en.m.wikipedia.org/wiki/X.509">https://en.m.wikipedia.org/wiki/X.509</a></li>
 </ul>
-</blockquote>
 
         </div>
         <div class="col-md-3">
